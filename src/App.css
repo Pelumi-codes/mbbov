@@ -1,0 +1,192 @@
+input:focus {
+  outline: none;
+  border-color: #1677bd;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+button:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+select {
+  appearance: none;
+}
+
+textarea {
+  resize: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  pointer-events: none;
+  overflow: auto;
+  z-index: 5;
+}
+
+.backdrop.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.noDisplay {
+  display: none;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.textUnderline {
+  text-decoration: underline;
+}
+
+.textUpperCase {
+  text-transform: uppercase;
+}
+
+.textCapitalize {
+  text-transform: capitalize;
+}
+
+.displayLarge {
+  font-family: 'DM Sans',sans-serif;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 108px;
+  letter-spacing: 0px;
+}
+
+.displayLargeBold {
+  font-family: 'DM Sans',sans-serif;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 108px;
+  letter-spacing: 0px;
+}
+
+.displayMedium {
+  font-family: 'DM Sans',sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 72px;
+  letter-spacing: 0px;
+}
+
+.displayMediumBold {
+  font-family: 'DM Sans',sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 72px;
+  letter-spacing: 0px;
+}
+
+.displaySmall {
+  font-family: 'DM Sans',sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: 0px;
+}
+
+.displaySmallBold {
+  font-family: 'DM Sans',sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: 0px;
+}
+
+.textLarge {
+  font-family: 'DM Sans',sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 36px;
+  letter-spacing: 0px;
+}
+
+.textLargeBold {
+  font-family: 'DM Sans',sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 0px;
+}
+
+.textMedium {
+  font-family: 'DM Sans',sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: 0px;
+}
+
+.textMediumBold {
+  font-family: 'DM Sans',sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: 0px;
+}
+
+.textSmall {
+  font-family: 'DM Sans',sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+.textSmallBold {
+  font-family: 'DM Sans',sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+.textXSmall {
+  font-family: 'DM Sans',sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0px;
+}
