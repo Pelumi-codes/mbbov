@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { mbbovLogo } from '../../assets/index'
+import Button from './Button'
 const Wrapper = styled.div`
 display: flex;
 padding: 24px 72px;
@@ -12,18 +13,12 @@ img{
 .invest{
   margin-left:auto;
 }
-a + a{
+a + a,a + button{
   margin-left:68px;
 }
-a:last-child{
-  background-color: #1C0F61;
-  color: white;
+button:last-child{
   width: 200px;
   height: 56px;
-  border-radius: 2px;
-  display: flex;
-  align-items:center;
-  justify-content:center;
 }
 `
 const Nav = () => {
@@ -34,7 +29,7 @@ const Nav = () => {
       <a href="/">Savings</a>
       <a href="/">Loans</a>
       <a href="/">About us</a>
-      <a href="/">Login</a>
+      <Button value='Login'/>
     </Wrapper>
   )
 }
