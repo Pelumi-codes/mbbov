@@ -3,12 +3,18 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import './App.css';
 import Layout from './components/global/Layout'
 import Landing from './pages/Landing'
+import Loan from './pages/Loan'
+import Investment from './pages/Investment'
+import Savings from './pages/Savings'
 
 function App() {
   return (
     <Layout>
       <Router>
         <Route exact path='/' component={Landing}/>
+        <Route exact path='/savings' component={Savings}/>
+        <Route exact path='/Loan' component={Loan}/>
+        <Route exact path='/Investment' component={Investment}/>
       </Router>
     </Layout>
   );

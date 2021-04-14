@@ -1,14 +1,13 @@
 import React from 'react'
 import Headline from '../components/global/Headline'
-const Landing = () => {
+const Investment = () => {
   return (
     <>
       <Headline
         title='Get your finances back on track today'
         text='Invest today and watch your money grow. Save today, flex tomorrow. Loan today and pay back with little interest.'
-        hasChild
       />
     </>
   )
 }
-export default Landing
+export default Investment

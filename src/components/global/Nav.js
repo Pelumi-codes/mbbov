@@ -3,6 +3,10 @@ import styled from 'styled-components'
 import { mbbovLogo } from '../../assets/index'
 import Button from './Button'
 const Wrapper = styled.div`
+position: sticky;
+top:0;
+background-color:white;
+z-index:3;
 display: flex;
 padding: 24px 72px;
 align-items:center;
@@ -25,9 +29,9 @@ const Nav = () => {
   return (
     <Wrapper>
       <img src={mbbovLogo} alt="" />
-      <a href="/" className='invest'>Investment</a>
-      <a href="/">Savings</a>
-      <a href="/">Loans</a>
+      <a href="/investment" className='invest'>Investment</a>
+      <a href="/savings">Savings</a>
+      <a href="/loan">Loans</a>
       <a href="/">About us</a>
       <Button value='Login'/>
     </Wrapper>
