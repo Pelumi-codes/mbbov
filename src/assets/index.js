@@ -16,6 +16,15 @@ import third from './icons/landing/Group (2).svg'
 import phone from './icons/Contact/phone.svg'
 import locate from './icons/Contact/locate.svg'
 import net from './icons/Contact/net.svg'
+import mbbovLogo from './images/global/mbbov-logo.svg';
+import pcPhoneCircle from './images/global/pc-phone-circle.png';
+import star from './icons/global/gold-star.svg'
+import landing_image_2 from './images/landing/landing_image_2.png'
+import landing_image_3 from './images/landing/landing_image_3.png'
+import landing_image_4 from './images/landing/landing_image_4.png'
+import tick from './icons/global/tick.svg'
+import tick_orange from './icons/global/tick_orange.svg'
+import tick_purple from './icons/global/tick_purple.svg'
 
 export {
   mbbovLogo,
@@ -33,4 +42,16 @@ export {
   phone,
   net,
   locate
+}
+
+export {
+  mbbovLogo,
+  pcPhoneCircle,
+  star,
+  landing_image_2,
+  landing_image_3,
+  landing_image_4,
+  tick,
+  tick_orange,
+  tick_purple
 }
