@@ -1,4 +1,5 @@
 import React from 'react'
+import Simplify from '../components/Landing/Simplify'
 import Headline from '../components/global/Headline'
 import Features from '../components/global/Features'
 import {
@@ -6,10 +7,10 @@ import {
   landing_image_4
 } from '../assets/index'
 
-
 const Landing = () => {
   return (
     <>
+     <Simplify />
       <Headline
         title='Get your finances back on track today'
         text='Invest today and watch your money grow. Save today, flex tomorrow. Loan today and pay back with little interest.'
@@ -46,7 +47,6 @@ const Landing = () => {
           'Ad sint cupidatat qui veniam enim labore reprehender.',
         ]}
       />
-
     </>
   )
 }
