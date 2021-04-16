@@ -1,9 +1,10 @@
 import React from 'react'
-import Header from '../components/Landing/Header'
+import Simplify from '../components/Landing/Simplify'
+
 const Landing = () => {
   return (
     <>
-      <Header/>
+     <Simplify />
     </>
   )
 }
