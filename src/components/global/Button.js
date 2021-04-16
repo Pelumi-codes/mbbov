@@ -6,20 +6,13 @@ const Wrapper = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: ${(props) => (props.bg === "primary" ? "1.2rem" : "4rem")};
-  height: 6.4rem;
+  border-radius: 5px;
+  height:56px;
   width: fit-content;
   padding: 0 3.6rem;
-  background: ${(props) =>
-    props.bg === "white"
-      ? "#ffffff"
-      : props.bg === "primary"
-      // ? props.theme.colors.primary
-      // : props.theme.colors.gradients[0]
-    };
+  background: #1C0F61;
   color: ${(props) =>
     props.color ? props.theme.colors[props.color] : "#ffffff"};
-  font-family: Eudoxus Sans;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;

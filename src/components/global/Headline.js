@@ -162,7 +162,7 @@ const Headline = ({hasChild,title,text}) => {
       <div>
         <h1>{title}</h1>
         <p>{text}</p>
-        <Button value='Get Started' />
+        <Button text='Get Started' />
         {
           hasChild ?<>
           <p>

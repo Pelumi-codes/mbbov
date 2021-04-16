@@ -79,7 +79,7 @@ const Features = (
             />
         )}
         </ul>
-        <Button value='Get Started'/>
+        <Button text='Get Started'/>
         
       </div>
       <img

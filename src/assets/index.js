@@ -1,5 +1,5 @@
 import React from 'react'
-import mbbovLogo from './icons/Global/mbbov-logo.svg'
+import mbbovLogo from './icons/global/mbbov-logo.svg'
 import Landing1 from './images/About/about 1.png'
 import Landing2 from './images/About/about2.png'
 import mbbovimg from './icons/About/Group.svg'
@@ -25,6 +25,10 @@ import landing_image_4 from './images/landing/landing_image_4.png'
 import tick from './icons/global/tick.svg'
 import tick_orange from './icons/global/tick_orange.svg'
 import tick_purple from './icons/global/tick_purple.svg'
+import chevronDown from './icons/global/chevronDown.svg'
+import hamburger from './icons/global/hamburger.svg'
+import cancel from './icons/Contact/cancel.svg'
+import check from './icons/Contact/check.svg'
 
 export {
   mbbovLogo,
@@ -49,5 +53,9 @@ export {
   landing_image_4,
   tick,
   tick_orange,
-  tick_purple
+  tick_purple,
+  chevronDown,
+  hamburger,
+  cancel,
+  check,
 }
