@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import FormGroup from "./FormGroup";
+import Button from '../global/Button'
 import {phone,
   net,
   locate} from '../../assets/index'
 const Wrapper = styled.div`
 background: #F7F7FC;
-  margin: -4.6rem 72px;
+  margin: -4.6rem 72px 0 72px;
   .contact{
     display: flex;
     flex-wrap: wrap;
@@ -44,6 +45,9 @@ background: #F7F7FC;
   .between{
     justify-content:space-between;
   }
+  button{
+    margin:0 auto 60px 48px;
+  }
   .mb{
     display:none;
   }
@@ -62,6 +66,7 @@ background: #F7F7FC;
     font-weight: 500;
     font-size: 20px;
     line-height: 150%;
+    display: block;
   }
     .offices {
       width: 35%;
@@ -154,6 +159,10 @@ const ContactForm = () => {
               />
             ))}
           </form>
+            <Button
+              text='submit'
+            width='400px'
+            />
         </div>
         <div className="offices">
           <p className="size-24">Contact info</p>
@@ -162,8 +171,8 @@ const ContactForm = () => {
                 <img src={phone} alt="" />
               </div>
               <div className="pad-28">
-                <p className="size-20">+2349017217256</p>
-                <p className="size-20">+2348109264165</p>
+                <a href='tel:+2349017217256' className="size-20">+2349017217256</a>
+                <a href='tel:+2348109264165' className="size-20">+2348109264165</a>
               </div>
           </div>
           <div className="flex flex-center pad-3">
@@ -171,7 +180,7 @@ const ContactForm = () => {
                 <img src={net} alt="" />
                 </div>
                 <div className="pad-28"> 
-                  <a href="" className="size-20">customercare@mbbov.net</a>
+                  <a href="mailto:customercare@mbbov.net" className="size-20">customercare@mbbov.net</a>
                 </div>
           </div>
           <div className="flex flex-center pad-3">

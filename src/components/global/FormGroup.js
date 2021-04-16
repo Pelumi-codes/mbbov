@@ -57,6 +57,7 @@ const Wrapper = styled.div
      margin: 0;
   }
   .errMessage{
+    display: ${props=>props.showError ? 'block' : 'none'};
     font-weight: 500;
     font-size: 14px;
     line-height: 130%;
@@ -78,8 +79,19 @@ const Wrapper = styled.div
     order:1;
   }
 `;
-const FormGroup = ({ fieldStyle, inputType, name, placeholder }) => {
+const FormGroup = ({ fieldStyle, inputType, name, placeholder,showError }) => {
   const [showLabel, setShowLabel] = useState(false);
+  const [isTouched, setIsTouched] = useState(false)
+  
+  const validationHandler = () => {
+     setIsTouched(
+                  prev => {
+                    console.log('Previous state',prev)
+                    return true
+                   }
+     )
+   
+  }
   const toggleLabel = (e) => {
     if (e.target.value.length > 0) {
       setShowLabel(true);
@@ -87,21 +99,9 @@ const FormGroup = ({ fieldStyle, inputType, name, placeholder }) => {
       setShowLabel(false);
     }
   };
-  // const validate=()=>{
-  //   var img=document.querySelector("img");
-  //   var inputtext=document.querySelector(".textSmall").value;
-  //   var text=document.querySelector(".errMessage");
-  //   var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  //   if(inputtext.match(mailformat)){
-  //       text.style.display="none"
-  //       img.style.display="none"
-  //       return true;
-  //   }else{
-  //      text.style.display="block"
-  //       img.style.display="block"
-  //       return false;
-  //   };
-  // }
+ 
+
+
   return (
     <Wrapper 
     isValid={showLabel}
@@ -116,7 +116,9 @@ const FormGroup = ({ fieldStyle, inputType, name, placeholder }) => {
             name={name}
             placeholder={placeholder}
             onBlur={toggleLabel}
-            onChange={toggleLabel}
+              onChange={toggleLabel}
+              onFocus={validationHandler}
+              showError={showError}
           />
             <img src={check} alt="check" />
           </div>
@@ -150,6 +152,7 @@ const FormGroup = ({ fieldStyle, inputType, name, placeholder }) => {
               placeholder={placeholder}
               onBlur={toggleLabel}
               onChange={toggleLabel}
+             
             />
             <img src={check} alt="check" />
           </div>
