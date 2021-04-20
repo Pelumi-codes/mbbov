@@ -22,6 +22,20 @@ import star from './icons/global/gold-star.svg'
 import landing_image_2 from './images/landing/landing_image_2.png'
 import landing_image_3 from './images/landing/landing_image_3.png'
 import landing_image_4 from './images/landing/landing_image_4.png'
+import landing_image_5 from './images/landing/landing-image-5.png'
+import saving from './images/landing/savings 2 1.png'
+import payment from './images/landing/payment 1.png'
+
+import pana from './images/landing/pana.png'
+import pana2 from './images/landing/pana2.png'
+import testimonial from './images/landing/testimonial1 1.png'
+import happy from './images/landing/happt.png'
+import rating from './icons/landing/rating.svg'
+
+import one from './icons/landing/Group 2436.svg'
+import two from './icons/landing/Group 2436 (1).svg'
+import three from './icons/landing/Group 2436 (2).svg'
+
 import tick from './icons/global/tick.svg'
 import tick_orange from './icons/global/tick_orange.svg'
 import tick_purple from './icons/global/tick_purple.svg'
@@ -51,6 +65,7 @@ export {
   landing_image_2,
   landing_image_3,
   landing_image_4,
+  landing_image_5,
   tick,
   tick_orange,
   tick_purple,
@@ -58,4 +73,14 @@ export {
   hamburger,
   cancel,
   check,
+  testimonial,
+  rating,
+  happy,
+  pana,
+  pana2,
+  saving,
+  payment,
+  one,
+  two,
+  three
 }

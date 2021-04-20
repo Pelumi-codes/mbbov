@@ -37,7 +37,7 @@ const Nav = () => {
       <a href="/savings">Savings</a>
       <a href="/loan">Loans</a>
       <a href="/">About us</a>
-        <Button value='Login' />
+        <Button text='Login' />
       </div>
       <div>
         <a href=""></a>

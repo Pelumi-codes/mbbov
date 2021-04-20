@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import Button from '../global/Button';
 
 
-import { first,
-    second,
-    third} from '../../assets/index'
+import {  one,
+    two,
+    three} from '../../assets/index'
 
 
 const Wrapper = styled.div`
@@ -41,9 +41,9 @@ const Wrapper = styled.div`
             font-size: 60px;
             line-height: 130%;
         }
-        .size-30{
+        .size-22{
             font-weight: bold;
-            font-size: 32px;
+            font-size: 22px;
             line-height: 150%;
         }
         .size-18{
@@ -52,7 +52,7 @@ const Wrapper = styled.div`
             line-height: 150%;
         }
         .pad-t{
-            padding-top:1rem;
+            padding-top:1.5rem;
         }
         .pad-3{
             padding-top:4rem;
@@ -62,6 +62,9 @@ const Wrapper = styled.div`
         }
         .column{
         flex-direction:column;
+        }
+        .width-336{
+            width:256px;
         }
 
         @media (max-width: 768px) {
@@ -90,32 +93,26 @@ const Wrapper = styled.div`
 const Header= () => {
     return (
       <Wrapper>
-          <h2 className="family center size-60 lg">We simplify the way in which<br />
-                            money works for you</h2>
-           <h2 className="family center size-60 mb">We simplify the <br /> way in which
-                            money<br />  works for you</h2>
+          <h2 className="family center size-60 lg">Get started in 3 easy steps</h2>
           
            <div className="family flex between pad-t simplify pad-3">
               <div className="flex column flex-center pad-2">
-                 <img src={first} alt="" />
-                 <p className="size-30">Quick and easy</p>
-                 <p className="size-18 center pad-t">Connect your bank account and <br />start saving in under 5 minutes.</p>
+                 <img src={one} alt="" />
+                 <p className="size-22 pad-t">Sign Up</p>
+                 <p className="size-18 center pad-t width-336">Create an account with your name and email or phone number</p>
               </div>
               <div className="flex column flex-center pad-2">
-                 <img src={second} alt="" />
-                 <p className="size-30">Safe to use</p>
-                 <p className="size-18 center pad-t">Over $5+ million earning interest <br />safelythanks to best-in-class 
-                 <br />lending partners.</p>
+                 <img src={two} alt="" />
+                 <p className="size-22 pad-t">Choose a Payment Option</p>
+                 <p className="size-18 center pad-t width-336">Via bank transfer(s) or paystack, set up and fund your first plan.</p>
               </div>
               <div className="flex column flex-center pad-2">
-                 <img src={third} alt="" />
-                 <p className="size-30">High profit</p>
-                 <p className="size-18 center pad-t">4% APY through the power of <br />decentralized finance.</p>
+                 <img src={three} alt="" />
+                 <p className="size-22 pad-t">Start Saving</p>
+                 <p className="size-18 center pad-t width-336">Choose a flexible savings option either daily, weekly or monthly.</p>
               </div>
            </div>
-           <Button text='Get Started' className="center m-3"/>
-
-        
+           <Button text='Get Started' className="center m-3"/>        
       </Wrapper>
     )
   }

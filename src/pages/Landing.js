@@ -1,10 +1,12 @@
 import React from 'react'
 import Simplify from '../components/Landing/Simplify'
+import Happy from '../components/Landing/Happy'
 import Headline from '../components/global/Headline'
 import Features from '../components/global/Features'
 import {
   landing_image_3,
-  landing_image_4
+  landing_image_4,
+  landing_image_5
 } from '../assets/index'
 
 const Landing = () => {
@@ -28,9 +30,9 @@ const Landing = () => {
       />
       <Features
         tickColor='purple'
-        image={landing_image_3}
+        image={landing_image_5}
         imageLeft
-        title='Apply for a savings plan and enjoy tomorrow'
+        title='Request a loan and pay with little interest '
         listArray={[
           'Ad sint cupidatat qui veniam enim labore reprehender.',
           'Ad sint cupidatat qui veniam enim labore reprehender.',
@@ -38,15 +40,17 @@ const Landing = () => {
         ]}
       />
       <Features
-        tickColor='orange'
+        tickColor='purple'
         image={landing_image_4}
-        title='Get up to 5% interest for every investment'
+        title='Apply for a savings plan and enjoy tomorrow'
         listArray={[
           'Ad sint cupidatat qui veniam enim labore reprehender.',
           'Ad sint cupidatat qui veniam enim labore reprehender.',
           'Ad sint cupidatat qui veniam enim labore reprehender.',
         ]}
       />
+      <Happy />
+      
     </>
   )
 }
