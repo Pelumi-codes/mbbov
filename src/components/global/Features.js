@@ -19,6 +19,15 @@ h2{
   font-weight:700;
   width:550px;
   line-height:72px;
+ .orange{
+color: #FB9204;
+ }
+ .purple{
+color: #CC0DF2;
+ }
+ .blue{
+   color: #0639F9;
+ }
 }
 li + li{
   margin-top:30.5px;
@@ -67,10 +76,47 @@ const Features = (
     ]
   }
 ) => {
+  let newTitle = title;
+  const words = title.split(" ");
+  if (tickColor === 'blue') {
+     newTitle = words.map(
+        word=> {
+      if (word === words[3] || word === words[4]) {
+        return <span className='blue'> {word}</span>
+      }
+        else return' ' + word + ' '
+        }
+      )
+
+  }
+
+  if (tickColor === 'orange') {
+     newTitle = words.map(
+        word=> {
+      if (word === words[words.length - 1] || word === words[words.length - 2]) {
+        return <span className='orange'> {word}</span>
+      }
+        else return' ' + word + ' '
+        }
+      )
+
+  }
+  
+  if (tickColor === 'purple') {
+     newTitle = words.map(
+        word=> {
+      if (word === words[words.length - 1] || word === words[words.length - 2]) {
+        return <span className='purple'> {word}</span>
+      }
+        else return' ' + word + ' '
+        }
+      )
+
+  }
   return (
     <Wrapper imageLeft={imageLeft}>
       <div className='text'>
-        <h2>{title }</h2>
+        <h2>{newTitle }</h2>
       <ul>
           {listArray.map(
             list => <Li

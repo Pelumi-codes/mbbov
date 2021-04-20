@@ -32,7 +32,7 @@ const Landing = () => {
         tickColor='purple'
         image={landing_image_5}
         imageLeft
-        title='Request a loan and pay with little interest '
+        title='Request a loan and pay with little interest'
         listArray={[
           'Ad sint cupidatat qui veniam enim labore reprehender.',
           'Ad sint cupidatat qui veniam enim labore reprehender.',
@@ -40,7 +40,7 @@ const Landing = () => {
         ]}
       />
       <Features
-        tickColor='purple'
+        tickColor='orange'
         image={landing_image_4}
         title='Apply for a savings plan and enjoy tomorrow'
         listArray={[
