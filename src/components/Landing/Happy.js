@@ -110,6 +110,7 @@ const Wrapper = styled.div`
                 display:none;
             }
         }
+        
 
 `;
 
@@ -140,7 +141,7 @@ const Header= () => {
                   <Button text='Get Started'/>
               </div>
               <div className="width">
-                  <img src={happy} alt=""/>
+                  <img src={happy} alt="" className="width-100" />
               </div>
           </div>
 
