@@ -16,6 +16,7 @@ const Wrapper = styled.div`
               height: 300px;
               width: 300px;
               border-radius:15px;  
+              margin: auto 0;
             }
             .text{
                 margin-top:82px;
@@ -39,6 +40,12 @@ const Wrapper = styled.div`
                         margin-right:12px;
                     }
                 }
+                .sm-p{
+                        font-size:18px;
+                        margin-top:0;
+                        margin-bottom:203px;
+
+                }
             }
         }
 
@@ -47,7 +54,7 @@ const Wrapper = styled.div`
 const Header= () => {
     return (
       <Wrapper>
-          <div div className ="gray-section" >
+          <div className ="gray-section" >
                     <img className='large-image' src={testimonial} alt=""/>
                 <div className="text">
                     <h2 className="">100+ Happy Clients</h2>
@@ -59,21 +66,9 @@ const Header= () => {
                         <p>Racheal Nixon Jumbo</p>
                         <img className="" src={rating} alt=""/>
                     </div>
-                    <p>Business Owner</p>
+                    <p className='sm-p'>Business Owner</p>
                 </div>
           </div>
-          <div className="">
-              <div className=" width">
-                  <h2 className="">Take your finances to the next level</h2>
-                  <p className="">Sign up on MBBOV and  start making money work for you.</p>
-                  <Button text='Get Started'/>
-              </div>
-              <div className="">
-                  <img src={happy} alt=""/>
-              </div>
-          </div>
-
-        
       </Wrapper>
     )
   }

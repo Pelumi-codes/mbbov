@@ -6,7 +6,8 @@ import Features from '../components/global/Features'
 import {
   landing_image_3,
   landing_image_4,
-  landing_image_5
+  landing_image_5,
+  happy,
 } from '../assets/index'
 
 const Landing = () => {
@@ -50,8 +51,25 @@ const Landing = () => {
         ]}
       />
       <Happy />
+       <Headline
+        title = 'Take your finances to the next level'
+        text='Sign up on MBBOV and  start making money work for you.'
+        image={happy}
+      />
       
     </>
   )
 }
 export default Landing
+/*
+<div className="">
+              <div className=" width">
+                  <h2 className="">Take your finances to the next level</h2>
+                  <p className="">Sign up on MBBOV and  start making money work for you.</p>
+                  <Button text='Get Started'/>
+              </div>
+              <div className="">
+                  <img src={happy} alt=""/>
+              </div>
+          </div>
+*/
