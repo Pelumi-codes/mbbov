@@ -46,22 +46,28 @@ font-size:16px;
   }
   
   .links{
-    padding: 16px 0;
-    margin-top:48px;
-    display:${props=>props.showLink? 'flex' : 'none'};
+    padding:  0;
+    margin-top:0;
+    transition: all 0.3s;
+    display: flex;
+    overflow: hidden;
     flex-direction:column;
+    justify-content:space-around;
+    height: ${props=>props.showLink ? 'calc(100vh - 56px)' : '0'};
+    opacity: ${props=>props.showLink ? '1' : '0'};
     a{
-      height: 72px;
+      height: 36px;
       display: flex;
       align-items:center;
       padding-left:24px;
     }
-
-    a + a{
-      margin-top:24px;
+    button{
+      margin-left:24px;
+      margin-bottom:24px;
     }
+
     a:hover{
-      background: #1d0f6105;
+      color: #4f31e4;
     }
   }
 
@@ -95,7 +101,7 @@ const Nav = () => {
       </div>
       <div className='mobile'>
         <div className='topLinks'>
-          <a href="">
+          <a href="/">
             <img src={mbbovLogo} alt="mbbovLogo"/>
           </a>
           <img

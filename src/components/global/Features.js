@@ -67,17 +67,35 @@ ul{
     line-height: 49px;
 }
 }
+
 @media (max-width:768px){
   flex-direction:column-reverse;
-  h2{
-    font-size: 28px;
-    width: 332px;
+  .text{
+    width:100%;
+    h2{
+    font-size: 30px;
+    width: 76%;
     line-height: 49px;
+    }
+  }
+  .hero{
+    width:100%;
+  } 
 }
+
+@media (max-width:500px){
+    .text{
+      h2{
+    font-size: 20px;
+        line-height: 31px;
+    width: 89%;
+  }
 }
-.hero{
-  width:100%;
-} 
+button{
+  margin: auto;
+}
+
+}
 
 `
 
@@ -86,11 +104,18 @@ const LiWrapper = styled.li`
   font-size:18px;
   display: flex;
   align-items:center;
-
-img{
-  height:36px;
-  width:36px;
-  margin-right:12px;
+  
+  img{
+    height:36px;
+    width:36px;
+    margin-right:12px;
+  }
+  @media (max-width:768px){
+    font-size:16px;
+    img{
+      height:25px;
+      width:25px;
+    }
 }
 `
 const Li = ({value,tickColor}) => {

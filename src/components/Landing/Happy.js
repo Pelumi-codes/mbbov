@@ -48,7 +48,109 @@ const Wrapper = styled.div`
                 }
             }
         }
+        
 
+@media (max-width:1200px){
+    .gray-section{
+            padding: 0 93px;
+            display: flex;
+            .large-image{
+            }
+            .text{
+                h2{
+                }
+                p{
+                }
+                .text--small{
+                    display: flex;
+                    p{
+                        font-size:13px;
+                    }
+                }
+                .sm-p{
+                    font-size:13px;
+
+                }
+            }
+        }
+}
+
+@media (max-width:1024px){
+    .gray-section{
+            padding: 0 93px;
+            display: flex;
+            .large-image{
+            }
+            .text{
+                h2{
+                    font-size:30px;
+                }
+                p{
+                    font-size:17px;
+                }
+                .text--small{
+                    display: flex;
+                    p{
+                    }
+                }
+                .sm-p{
+
+                }
+            }
+        }
+}
+
+@media (max-width:900px){
+    .gray-section{
+            padding: 0 43px;
+            display: flex;
+            .large-image{
+            }
+            .text{
+                h2{
+                    font-size:30px;
+                }
+                p{
+                    font-size:17px;
+                }
+                .text--small{
+                }
+                .sm-p{
+                    margin-bottom: 76px;
+                }
+            }
+        }
+}
+@media (max-width:768px){
+    .gray-section{
+            padding: 0 43px;
+            display: flex;
+            flex-direction:column;
+            .large-image{
+                margin: auto;
+                margin-top:76px;
+                height: auto;
+                width: 300px;
+                @media (max-width:500px){
+                    width: 93%;
+                }
+            }
+            .text{
+                margin-left:0;
+                h2{
+                    font-size:30px;
+                }
+                p{
+                    font-size:17px;
+                }
+                .text--small{
+                }
+                .sm-p{
+                    margin-bottom: 76px;
+                }
+            }
+        }
+}
 `;
 
 const Header= () => {
