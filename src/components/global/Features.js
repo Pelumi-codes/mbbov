@@ -33,12 +33,52 @@ li + li{
   margin-top:30.5px;
 }
 .hero{
-  width:600px;
+  width:51.5%;
 } 
 
 ul{
   margin-bottom:118px;
 }
+
+@media (max-width:1200px){
+  h2{
+    margin-bottom: 42.5px;
+    font-size: 40px;
+    width: 433px;
+    line-height: 49px;
+}
+
+}
+
+@media (max-width:1024px){
+  padding: 100px 45px;
+  h2{
+    margin-bottom: 42.5px;
+    font-size: 32px;
+    width: 410px;
+    line-height: 49px;
+}
+}
+
+@media (max-width:840px){
+  h2{
+    font-size: 28px;
+    width: 332px;
+    line-height: 49px;
+}
+}
+@media (max-width:768px){
+  flex-direction:column-reverse;
+  h2{
+    font-size: 28px;
+    width: 332px;
+    line-height: 49px;
+}
+}
+.hero{
+  width:100%;
+} 
+
 `
 
 const LiWrapper = styled.li`
