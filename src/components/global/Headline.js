@@ -43,9 +43,7 @@ overflow: hidden;
    }
 
 
-   .img-container{
-   }
-
+   
    p{
         display: flex;
         align-items:center;
@@ -91,15 +89,23 @@ overflow: hidden;
 
 
     @media (max-width:1024px){
-     flex-direction:column-reverse;
+    .img-container{
+    width:100%;
+   }
+   .text{
+     width: 50%;
+     margin-top:50px;
+   }
+
      .hero{
         width: 100%;
-        margin-top:100px;
+        margin-top:0;
         transform: translateX(0)
    }
        h1{
-      width: 583px;
-      font-size:60px;
+      width: 80%;
+      font-size:30px;
+      line-height:50px;
       margin-top:80px;
        }
        p{
@@ -107,18 +113,50 @@ overflow: hidden;
          width:526px;
        }
     }
+    @media (max-width:900px){
+    //  flex-direction:column-reverse;
+    .img-container{
+    width:100%;
+   }
+   .text{
+     width: 50%;
+   }
+
+     .hero{
+        width: 100%;
+        margin-top:100px;
+        transform: translateX(0)
+   }
+       h1{
+     width: 80%;
+    font-size: 27px;
+    line-height: 44px;
+    margin-top: 0;
+       }
+       p{
+             font-size: 15px;
+    width: 329px;
+       }
+    }
 
 
     @media (max-width:768px){
       padding: 0 30px;
+      flex-direction:column-reverse;
        h1{
       width: 467px;
       font-size:48px;
-      margin-top:80px;
+      margin-top:0;
        }
        p{
         font-size:20px;
          width:429px;
+       }
+       .hero{
+         margin-top:30px;
+       }
+       .text{
+         margin-top:0;
        }
     }
 
@@ -159,7 +197,7 @@ overflow: hidden;
 const Headline = ({hasChild,title,text,image}) => {
   return (
     <Wrapper image={image}>
-      <div>
+      <div className='text'>
         <h1>{title}</h1>
         <p>{text}</p>
         <Button text='Get Started' />

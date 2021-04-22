@@ -70,6 +70,7 @@ ul{
 
 @media (max-width:768px){
   flex-direction:column-reverse;
+  padding: 40px 45px;
   .text{
     width:100%;
     h2{
@@ -81,6 +82,11 @@ ul{
   .hero{
     width:100%;
   } 
+  
+  ul{
+    margin-bottom:60px;
+  }
+
 }
 
 @media (max-width:500px){
