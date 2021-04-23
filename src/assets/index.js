@@ -44,6 +44,11 @@ import hamburger from './icons/global/hamburger.svg'
 import cancel from './icons/Contact/cancel.svg'
 import check from './icons/Contact/check.svg'
 
+import stroke from './icons/global/Vector (Stroke).svg'
+
+import checkmark from './icons/global/fluent_checkmark-circle-16-filled.svg'
+import investing from './icons/global/Investing-amico 5.svg'
+
 export {
   mbbovLogo,
   Landing1,
@@ -82,5 +87,8 @@ export {
   payment,
   one,
   two,
-  three
+  three,
+  stroke,
+  checkmark,
+  investing
 }

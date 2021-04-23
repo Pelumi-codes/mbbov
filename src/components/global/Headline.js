@@ -4,7 +4,7 @@ import Button from './Button'
 import {pcPhoneCircle,star} from'../../assets/index'
 const Wrapper = styled.div`
 display: flex;
-padding: 0 72px;
+padding:${props =>props.image ? '116px 72px' : '0 72px'};
 position: relative;
 overflow: hidden;
 
@@ -156,9 +156,9 @@ overflow: hidden;
     }
 
 `
-const Headline = ({hasChild,title,text}) => {
+const Headline = ({hasChild,title,text,image}) => {
   return (
-    <Wrapper>
+    <Wrapper image={image}>
       <div>
         <h1>{title}</h1>
         <p>{text}</p>
@@ -183,7 +183,7 @@ const Headline = ({hasChild,title,text}) => {
       </div>
 
       <div className='img-container'>
-        <img className='hero' src={pcPhoneCircle} alt="pc-phone-circle"/>
+        <img className='hero' src={image ||pcPhoneCircle} alt={image ||"pc-phone-circle"}/>
       </div>
     </Wrapper>
   )

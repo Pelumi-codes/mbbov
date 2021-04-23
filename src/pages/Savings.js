@@ -14,7 +14,14 @@ const Savings = () => {
       <Terms />
       <Need />
       <Automate />
-      <Steps/>
+      <Steps
+        option1="Sign Up"
+        value1="Create an account with your name and email or phone number"
+        option2="Choose a Payment Option"
+        value2="Via bank transfer(s) or paystack, set up and fund your first plan."
+        option3="Start Saving"
+        value3="Choose a flexible savings option either daily, weekly or monthly."
+      />
     </>
   )
 }
