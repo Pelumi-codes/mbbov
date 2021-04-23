@@ -114,7 +114,7 @@ const Nav = () => {
           <a href="/investment">Investments</a>
           <a href="/savings">Savings</a>
           <a href="/loan">Loans</a>
-          <a href="">Abouts us</a>
+          <a href="/about">Abouts us</a>
           <Button text='Login'/>
         </div>
       </div>

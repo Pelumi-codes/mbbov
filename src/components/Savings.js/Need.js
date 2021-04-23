@@ -8,6 +8,10 @@ import { saving} from '../../assets/index'
 
 const Wrapper = styled.div`
         padding: 100px 72px;
+
+        .image{
+            width: 100%;
+        }
         
         .flex{
             display:flex;
@@ -128,8 +132,8 @@ const Header= () => {
                         <p className="size-20 pad width-440">Saving for rent? Saving for school? Whatever your aspirations are, save with  Mbbov with no interruptions.</p>
                         <Button text='Get Started'/>
             </div>
-            <div className="">
-                <img src={saving} alt=""/>
+            <div >
+                <img className="image" src={saving} alt=""/>
             </div>
           </div>
 
