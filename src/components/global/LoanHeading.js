@@ -23,6 +23,20 @@ const Wrapper = styled.div`
     .width{
         width: 464px;
     }
+    @media (max-width: 480.98px) {
+        .width {
+            width: auto;
+            padding: 0rem 1rem;
+        }
+    }
+    @media (min-width: 481px) and (max-width: 767.98px) {
+        .width {
+            width: auto;
+            padding: 0rem 2rem;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 1023.98px){}
+    @media (min-width: 1024px) and (max-width: 1199.98px){}
 `;
 
 
