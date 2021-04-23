@@ -91,13 +91,10 @@ export {
   one,
   two,
   three,
-
   stroke,
   checkmark,
   investing,
-
-  nav_hamburger,
   close,
   error,
-
+  nav_hamburger
 }

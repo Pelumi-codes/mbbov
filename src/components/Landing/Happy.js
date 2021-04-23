@@ -171,16 +171,6 @@ const Header= () => {
                     <p className='sm-p'>Business Owner</p>
                 </div>
           </div>
-          <div className="flex family between pad-section flex-center">
-              <div className=" width">
-                  <h2 className="size-60 width-680">Take your finances to the next level</h2>
-                  <p className="size-24 pad width-630">Sign up on MBBOV and  start making money work for you.</p>
-                  <Button text='Get Started'/>
-              </div>
-              <div className="width">
-                  <img src={happy} alt="" className="width-100" />
-              </div>
-          </div>
 
         
       </Wrapper>

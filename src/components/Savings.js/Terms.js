@@ -124,6 +124,46 @@ const Wrapper = styled.div`
                 display:none;
             }
         }
+         @media (max-width: 480.98px) {
+            padding: 100px 12px;
+            .shoot {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding-top: 2rem;
+            }
+
+        }
+        @media (min-width: 481px) and (max-width: 767.98px) {
+            padding: 100px 24px;
+            .mega {
+                padding: .2rem 0rem;
+            }
+            .step-16 {
+                font-size: 14px;
+            }
+            .shoot{
+                flex-direction:row;
+            }
+            .width-237 {
+                width: 207px;
+            }
+
+        }
+        @media (min-width: 768px) and (max-width: 1023.98px){
+            padding: 100px 48px;
+            .step {
+                padding: .2rem 0rem;
+            }
+            .mega {
+                padding: .2rem 0rem;
+            }
+            .step-16 {
+                font-size: 14px;
+            }
+
+        }
+        @media (min-width: 1024px) and (max-width: 1199.98px){}
 
 `;
 
@@ -136,7 +176,7 @@ const Header= () => {
                         <p className="size-20 pad width-300">Let’s help you find the plan that's right for you..</p>
                         <Button text='Get Started'/>
             </div>
-            <div className="width flex around">
+            <div className="width flex around shoot">
                 <div>
                     <div className="flex column pad-2">
                     <img src={pana2} alt="" />
