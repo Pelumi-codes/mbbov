@@ -83,6 +83,9 @@ const Wrapper = styled.div`
             .lg{
                 display:none;
             }
+            .size-60{
+                font-size:29px;
+            }
         }
 
 `;

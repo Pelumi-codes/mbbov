@@ -9,6 +9,7 @@ import Contact from './pages/Contact'
 import Loan from './pages/Loan'
 import Investment from './pages/Investment'
 import Savings from './pages/Savings'
+import Error from './pages/Error'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route exact path='/savings' component={Savings}/>
         <Route exact path='/Loan' component={Loan}/>
         <Route exact path='/Investment' component={Investment}/>
+        <Route exact path='/error' component={Error}/>
       </Router>
     </Layout>
   );

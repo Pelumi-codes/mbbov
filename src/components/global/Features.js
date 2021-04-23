@@ -33,12 +33,76 @@ li + li{
   margin-top:30.5px;
 }
 .hero{
-  width:600px;
+  width:51.5%;
 } 
 
 ul{
   margin-bottom:118px;
 }
+
+@media (max-width:1200px){
+  h2{
+    margin-bottom: 42.5px;
+    font-size: 40px;
+    width: 433px;
+    line-height: 49px;
+}
+
+}
+
+@media (max-width:1024px){
+  padding: 100px 45px;
+  h2{
+    margin-bottom: 42.5px;
+    font-size: 32px;
+    width: 410px;
+    line-height: 49px;
+}
+}
+
+@media (max-width:840px){
+  h2{
+    font-size: 28px;
+    width: 332px;
+    line-height: 49px;
+}
+}
+
+@media (max-width:768px){
+  flex-direction:column-reverse;
+  padding: 40px 45px;
+  .text{
+    width:100%;
+    h2{
+    font-size: 30px;
+    width: 76%;
+    line-height: 49px;
+    }
+  }
+  .hero{
+    width:100%;
+  } 
+  
+  ul{
+    margin-bottom:60px;
+  }
+
+}
+
+@media (max-width:500px){
+    .text{
+      h2{
+    font-size: 20px;
+        line-height: 31px;
+    width: 89%;
+  }
+}
+button{
+  margin: auto;
+}
+
+}
+
 `
 
 const LiWrapper = styled.li`
@@ -46,11 +110,18 @@ const LiWrapper = styled.li`
   font-size:18px;
   display: flex;
   align-items:center;
-
-img{
-  height:36px;
-  width:36px;
-  margin-right:12px;
+  
+  img{
+    height:36px;
+    width:36px;
+    margin-right:12px;
+  }
+  @media (max-width:768px){
+    font-size:16px;
+    img{
+      height:25px;
+      width:25px;
+    }
 }
 `
 const Li = ({value,tickColor}) => {

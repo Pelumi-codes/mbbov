@@ -61,15 +61,3 @@ const Landing = () => {
   )
 }
 export default Landing
-/*
-<div className="">
-              <div className=" width">
-                  <h2 className="">Take your finances to the next level</h2>
-                  <p className="">Sign up on MBBOV and  start making money work for you.</p>
-                  <Button text='Get Started'/>
-              </div>
-              <div className="">
-                  <img src={happy} alt=""/>
-              </div>
-          </div>
-*/
