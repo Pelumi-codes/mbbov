@@ -12,6 +12,7 @@ import Savings from './pages/Savings'
 import Error from './pages/Error'
 
 import FormTest from './pages/FormTest'
+import LoanCalculator from './pages/LoanCalculator';
 
 function App() {
   return (
@@ -25,8 +26,8 @@ function App() {
         <Route exact path='/Loan' component={Loan}/>
         <Route exact path='/Investment' component={Investment}/>
         <Route exact path='/error' component={Error} />
+        <Route exact path='/loan-calculator' component={LoanCalculator} />
         
-        <Route exact path='/form' component={FormTest}/>
       </Router>
     </Layout>
   );

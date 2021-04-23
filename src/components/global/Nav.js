@@ -36,7 +36,7 @@ font-size:16px;
   }
 }
 .mobile{
-
+    position: relative;
   .topLinks{
     display: flex;
     justify-content:space-between;
@@ -96,7 +96,7 @@ const Nav = () => {
       <a href="/investment" className='invest'>Investment</a>
       <a href="/savings">Savings</a>
       <a href="/loan">Loans</a>
-      <a href="/">About us</a>
+      <a href="/about">About us</a>
         <Button text='Login' />
       </div>
       <div className='mobile'>
