@@ -47,6 +47,11 @@ import check from './icons/Contact/check.svg'
 import close from './icons/global/close.svg'
 import error from './images/error/error.png'
 
+import stroke from './icons/global/Vector (Stroke).svg'
+
+import checkmark from './icons/global/fluent_checkmark-circle-16-filled.svg'
+import investing from './icons/global/Investing-amico 5.svg'
+
 export {
   mbbovLogo,
   Landing1,
@@ -86,7 +91,13 @@ export {
   one,
   two,
   three,
+<<<<<<< HEAD
+  stroke,
+  checkmark,
+  investing
+=======
   nav_hamburger,
   close,
   error,
+>>>>>>> 8d1b5e67313e361bf4d1fccee8ca061b6dc82f20
 }
