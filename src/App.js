@@ -11,6 +11,8 @@ import Investment from './pages/Investment'
 import Savings from './pages/Savings'
 import Error from './pages/Error'
 
+import FormTest from './pages/FormTest'
+
 function App() {
   return (
     <Layout>
@@ -22,7 +24,9 @@ function App() {
         <Route exact path='/savings' component={Savings}/>
         <Route exact path='/Loan' component={Loan}/>
         <Route exact path='/Investment' component={Investment}/>
-        <Route exact path='/error' component={Error}/>
+        <Route exact path='/error' component={Error} />
+        
+        <Route exact path='/form' component={FormTest}/>
       </Router>
     </Layout>
   );

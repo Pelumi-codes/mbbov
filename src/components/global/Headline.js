@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components'
 import Button from './Button'
-import {pcPhoneCircle,star} from'../../assets/index'
+import { pcPhoneCircle, star } from '../../assets/index'
+import PropTypes from 'prop-types'
 const Wrapper = styled.div`
 display: flex;
 padding:${props =>props.image ? '116px 72px' : '0 72px'};
@@ -225,5 +226,11 @@ const Headline = ({hasChild,title,text,image}) => {
       </div>
     </Wrapper>
   )
+}
+Headline.propTypes = {
+  hasChild: PropTypes.bool,
+  tilte: PropTypes.string,
+  text: PropTypes.string,
+  image: PropTypes.object
 }
 export default Headline;
