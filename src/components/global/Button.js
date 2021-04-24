@@ -7,12 +7,10 @@ const Wrapper = styled.button`
   align-items: center;
   justify-content: center;
   border-radius: 5px;
-  height:56px;
-  width: ${props => props.width ? props.width :
-    "fit-content"
-  };
+  height: 56px;
+  width: ${(props) => props.width ?? "fit-content"};
   padding: 0 3.6rem;
-  background:${ (props) => props.disabled ? '#8D87B0' : '#1C0F61'};
+  background: ${(props) => (props.disabled ? "#8D87B0" : "#1C0F61")};
   color: ${(props) =>
     props.color ? props.theme.colors[props.color] : "#ffffff"};
   font-size: 16px;
@@ -24,12 +22,9 @@ const Wrapper = styled.button`
   transition: background 250ms ease-in;
 
   &:hover {
-    background: #0E0831;
+    background: #0e0831;
     color: #ffffff;
   }
-  
-    
-
 
   &:focus {
     background-color: #6666ff;
@@ -41,18 +36,17 @@ const Wrapper = styled.button`
   }
 `;
 
-const Button = ({
-    className,
-    text,
-    bg,
-    color,
-    as,
-    href,
-    width,
-    disabled
-  }) => {
+const Button = ({ className, text, bg, color, as, href, width, disabled }) => {
   return (
-    <Wrapper disabled={disabled} width={width} as={as} href={href} bg={bg} color={color} className={className}>
+    <Wrapper
+      disabled={disabled}
+      width={width}
+      as={as}
+      href={href}
+      bg={bg}
+      color={color}
+      className={className}
+    >
       {text}
     </Wrapper>
   );
@@ -65,4 +59,4 @@ Button.propTypes = {
   className: PropTypes.string,
 };
 
-  export default Button
+export default Button;

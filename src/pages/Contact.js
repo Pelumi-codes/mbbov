@@ -1,14 +1,14 @@
-import React from 'react'
-import Header from '../components/Contact/Header'
+import React from "react";
+import Header from "../components/Contact/Header";
 import ContactForm from "../components/global/ContactForm";
+import Layout from "../components/global/Layout";
 
 const Contact = () => {
   return (
-    <>
-     <Header />
-     <ContactForm />
-
-    </>
-  )
-}
-export default Contact
+    <Layout>
+      <Header />
+      <ContactForm />
+    </Layout>
+  );
+};
+export default Contact;
