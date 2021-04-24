@@ -12,41 +12,50 @@ const Wrapper = styled.div
   width: 100%;
   height: ${(props) =>
     props.fieldStyle === "longText" ? "fit-content" : "auto"};
-  background: #eff0f6;
   border-radius: 1.2rem;
   padding: ${(props) =>
     props.fieldStyle === "longText" ? "0rem 0rem" : "0rem 0rem"};
+
+  input::-webkit-input-placeholder{
+      font-size:16px;
+    }
+
   input,
   textarea {
     display: block;
-    color: #000000;
+    color: #0C0C0C;
     width: 100%;
     background-color: #FFFFFF;
     border: none;
+    border:1px solid #D9DBE9;
+    border-radius:4px;
     height:50px;
     padding:30px;
     order:2;
     background-color:${(props)=>{
       return props.isValid ?"#F2FFFB":"#FFFFFF"
-    }};
+  }};
+    font-size:16px;
   }
   textarea {
     height: 199px;
   }
   label {
     display: block;
-    color: #6e7191;
+    color: #00BA88;
     font-size:12px;
-    margin-bottom:-0.7rem;
-    margin-left:1rem;
+    margin-bottom: -16px;
+    margin-left:16px;
     width:fit-content;
-    padding:2px 5px;
-    background-color:#FFFFFF;
-    border-radius:5px;
+    padding:8px;
+    background-color:#F2FFFB;
     order:1;
   }
-  input:focus{
-    border:1px solid #7b61ff;
+  input:focus,
+  textarea:focus
+  {
+    border:1px solid #1C0F61;
+    
   }
   input:not(:valid){
     background-color:#FFF3F8;
@@ -67,11 +76,16 @@ const Wrapper = styled.div
     // display:none;
   }
   img {
-    width: 1.8rem;
+    width: 16px;
+    height: 16px;
     order: 7;
-    margin-left: -3rem;
-    // display:none;
+    margin:auto 0 auto -3rem ;
+    ${
+     props => props.fieldStyle ==="longText" ? 'margin-bottom:30px' : null
+    }
 }
+
+
   .flex{
     display:flex;
   }
@@ -86,7 +100,6 @@ const FormGroup = ({ fieldStyle, inputType, name, placeholder,showError }) => {
   const validationHandler = () => {
      setIsTouched(
                   prev => {
-                    console.log('Previous state',prev)
                     return true
                    }
      )
@@ -100,7 +113,10 @@ const FormGroup = ({ fieldStyle, inputType, name, placeholder,showError }) => {
     }
   };
  
-
+  const isTickValid = showLabel?
+    <img src={ check} alt="check" /> : 
+    null
+  
 
   return (
     <Wrapper 
@@ -120,7 +136,7 @@ const FormGroup = ({ fieldStyle, inputType, name, placeholder,showError }) => {
               onFocus={validationHandler}
               showError={showError}
           />
-            <img src={check} alt="check" />
+            {isTickValid}
           </div>
           <div><p className="errMessage">Uh oh! There was an error!</p></div>
           {showLabel && <label htmlFor={name}>{placeholder}</label>}
@@ -134,8 +150,12 @@ const FormGroup = ({ fieldStyle, inputType, name, placeholder,showError }) => {
               id={name}
               name={name}
               placeholder={placeholder}
+              onBlur={toggleLabel}
+              onChange={toggleLabel}
+              onFocus={validationHandler}
+              showError={showError}
             />
-            <img src={false ? check :cancel} alt="check" />
+            {isTickValid}
           </div>
           <div><p className="errMessage">Uh oh! There was an error!</p></div>
           {showLabel && <label htmlFor={name}>{placeholder}</label>}
@@ -154,11 +174,10 @@ const FormGroup = ({ fieldStyle, inputType, name, placeholder,showError }) => {
               onChange={toggleLabel}
              
             />
-            <img src={check} alt="check" />
+            {isTickValid}
           </div>
           <div><p className="errMessage">Uh oh! There was an error!</p></div>
 
-Praise Digifigs, [16.04.21 14:08]
 {showLabel && <label htmlFor={name}>{placeholder}</label>}
         </>
       )}
@@ -169,6 +188,7 @@ FormGroup.propTypes = {
   fieldStyle: PropTypes.string.isRequired,
   inputType: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  showError: PropTypes.bool,
   placeholder: PropTypes.string.isRequired,
 };
 export default FormGroup;

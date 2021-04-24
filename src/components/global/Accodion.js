@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import styled from 'styled-components'
-import {stroke} from '../../assets/index'
+import { stroke } from '../../assets/index'
+import PropTypes from 'prop-types'
 
 const Wrapper = styled.div`
   .question{
@@ -89,5 +90,9 @@ const Accordion = ({question,answer}) => {
             </div>
      </Wrapper>
   )
+}
+Accordion.propTypes = {
+  question: PropTypes.string,
+  answer: PropTypes.string
 }
 export default Accordion;

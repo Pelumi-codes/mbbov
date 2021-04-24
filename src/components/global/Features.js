@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components'
 import { landing_image_2, tick_orange, tick_purple } from '../../assets/index'
 import {tick} from '../../assets/index'
@@ -150,60 +151,66 @@ const Features = (
   let newTitle = title;
   const words = title.split(" ");
   if (tickColor === 'blue') {
-     newTitle = words.map(
-        word=> {
-      if (word === words[3] || word === words[4]) {
-        return <span className='blue'> {word}</span>
-      }
-        else return' ' + word + ' '
+    newTitle = words.map(
+      word => {
+        if (word === words[3] || word === words[4]) {
+          return <span className='blue'> {word}</span>
         }
-      )
+        else return ' ' + word + ' '
+      }
+    )
 
   }
 
   if (tickColor === 'orange') {
-     newTitle = words.map(
-        word=> {
-      if (word === words[words.length - 1] || word === words[words.length - 2]) {
-        return <span className='orange'> {word}</span>
-      }
-        else return' ' + word + ' '
+    newTitle = words.map(
+      word => {
+        if (word === words[words.length - 1] || word === words[words.length - 2]) {
+          return <span className='orange'> {word}</span>
         }
-      )
+        else return ' ' + word + ' '
+      }
+    )
 
   }
   
   if (tickColor === 'purple') {
-     newTitle = words.map(
-        word=> {
-      if (word === words[words.length - 1] || word === words[words.length - 2]) {
-        return <span className='purple'> {word}</span>
-      }
-        else return' ' + word + ' '
+    newTitle = words.map(
+      word => {
+        if (word === words[words.length - 1] || word === words[words.length - 2]) {
+          return <span className='purple'> {word}</span>
         }
-      )
+        else return ' ' + word + ' '
+      }
+    )
 
   }
   return (
     <Wrapper imageLeft={imageLeft}>
       <div className='text'>
-        <h2>{newTitle }</h2>
-      <ul>
+        <h2>{newTitle}</h2>
+        <ul>
           {listArray.map(
             list => <Li
               value={list}
               tickColor={tickColor}
             />
-        )}
+          )}
         </ul>
-        <Button text='Get Started'/>
+        <Button text='Get Started' />
         
       </div>
       <img
         className='hero'
-        src={image ||landing_image_2}
+        src={image || landing_image_2}
         alt="landing_image_2" />
     </Wrapper>
   )
-}
+};
+Features.propTypes = {
+  image: PropTypes.string,
+  tickColor: PropTypes.string,
+  title: PropTypes.string,
+  listArray: PropTypes.object.isRequired,
+};
 export default Features;
