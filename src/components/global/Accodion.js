@@ -17,6 +17,21 @@ const Wrapper = styled.div`
     font-weight: 500;
     font-size: 22px;
     color: #1C0F61;
+    @media (max-width:768px){
+        .question > p{
+         font-size:16px;
+       };
+    }
+
+    img{
+      transform:${props => props.isShow ? 'rotate(180deg)' : null };
+      transition: all 0.3s;
+    };
+    
+    @media (max-width:768px){
+      height: 48px;
+       margin:1rem auto;
+    };
 
   }
 
@@ -27,7 +42,10 @@ const Wrapper = styled.div`
     width:880px;
     padding:20px 48px;
     margin:auto;
-    display: ${props=> props.isShow ? 'block' : 'none'}
+    display: ${props => props.isShow ? 'block' : 'none'};
+    @media (max-width:768px){
+      padding:10px 24px;
+    };
   }
   .ans{
     font-weight: 500;
