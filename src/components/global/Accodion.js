@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 
 const Wrapper = styled.div`
   .question{
+
     width:880px;
     margin:2rem auto;
     height: 96px;
@@ -17,23 +18,44 @@ const Wrapper = styled.div`
     font-weight: 500;
     font-size: 22px;
     color: #1C0F61;
-    @media (max-width:768px){
-        .question > p{
-         font-size:16px;
-       };
-    }
 
     img{
       transform:${props => props.isShow ? 'rotate(180deg)' : null };
       transition: all 0.3s;
-    };
-    
-    @media (max-width:768px){
-      height: 48px;
-       margin:1rem auto;
+      @media (max-width:550px){
+        width:10px;
+      };
     };
 
-  }
+    @media (max-width:900px){
+      width:80%;
+    }
+    
+    @media (max-width:768px){
+
+      height: 48px;
+      margin:1rem auto;
+      font-size:16px;
+      padding:0px 24px;
+    };
+
+    @media (max-width:680px){
+
+      height: 48px;
+      margin:1rem auto;
+      font-size:14px;
+    };
+
+    @media (max-width:550px){
+      width:95%;
+      padding: 0 10px;
+    };
+    @media (max-width:400px){
+      font-size:12px;
+       padding: 0 5px;
+    };
+
+  };
 
   .question:hover{
     background: #f4f2fd5b;
@@ -43,44 +65,44 @@ const Wrapper = styled.div`
     padding:20px 48px;
     margin:auto;
     display: ${props => props.isShow ? 'block' : 'none'};
+   p{ 
+     font-weight: 400;
+    font-size: 22px;
+    color: #14142B;
+  };
+  
+
+    @media (max-width:900px){
+      width:80%;
+    };
+
     @media (max-width:768px){
       padding:10px 24px;
+      p{
+        font-size:14px;
+      };
     };
+    @media (max-width:550px){
+      padding:10px 0;
+      width:90%;
+      p{
+        font-size:14px;
+      };
+    };
+
+    @media (max-width:400px){
+      p{
+        font-size:11px;
+      };
+    };
+
+
   }
   .ans{
-    font-weight: 500;
-    font-size: 18px;
-    color: #1C0F61;
   }
-  @media (max-width: 480.98px) {
-    .question,.answer {
-      width: auto;
-    }
-   .question img {
-      margin-left: 1rem;
-    }
-    .question{
-      font-size: 18px;
-    }
-    .answer{
-      font-size: 15px;
-    }
+  
+ 
   }
-  @media (min-width: 481px) and (max-width: 767.98px) {
-    .question,.answer {
-      width: auto;
-    }
-   .question img {
-      margin-left: 1rem;
-    }
-    
-  }
-  @media (min-width: 768px) and (max-width: 1023.98px){
-    .question,.answer {
-      width: 709px;
-    }
-  }
-  @media (min-width: 1024px) and (max-width: 1199.98px){}
   `
 
 

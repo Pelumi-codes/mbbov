@@ -7,43 +7,59 @@ import Accordion from '../components/global/Accodion'
 const FAQ = [
   {
   question: 'How can I get a loan?',
-  answer: 'Go get your own loan'
+  answer: 'You can get a loan by registering as one of our members. Membership guarantees eligibility for available loan facilities.'
 },
   {
-  question: 'How long do I need to save in order to qualify for a loan facility?',
-  answer: 'Go get your own loan'
+  question: 'How long do I need to save to qualify for a loan facility?',
+  answer: 'MBBOV usually gives its customers 1 month (one month) to save the amount tagged ‘30%’. Also, you may decide to pay the savings in bulk at once (lump sum payment).'
 },
   {
   question: 'What is the duration for repayment of my loan?',
-  answer: 'Go get your own loan'
+  answer: 'Our loan tenure spans between 6 (six) weeks and 3 (three) months.'
 },
   {
   question: 'Do I need collateral ? ',
-  answer: 'Go get your own loan'
+  answer: 'MBBOV runs on a strict "No Collateral" policy.'
 },
   {
   question: 'How much can I access as loan?',
-  answer: 'Go get your own loan'
+  answer: 'Our loan facility provides a wide range of options when it comes to the amount to collect. Our different products carry different amount to be collected.'
 },
 ]
 
 const Wrapper = styled.div`
-text-align:center;
 h1{
+  text-align:center;
   margin-bottom:60px;
   font-size:48px;
   span{
-  color: #FF7742;
+    color: #FF7742;
+  }
+  @media (max-width:760px){
+    margin-bottom:48px;
+    font-size:24px;
+
 }
 }
 .form{
   width: 50%;
   margin: auto;
+  padding-bottom:107px;
   div + div{
     margin-top:32px;
   };
   button{
-    margin-top:32px;
+    margin-top:60px;
+  }
+  @media (max-width:768px){
+    div + div{
+    margin-top:16px;
+  };
+    button{
+    margin-top:30px;
+  }
+  padding-bottom:48px;
+    width:80%;
   }
 }
 .spanList{
@@ -62,15 +78,30 @@ h3{
   font-size:48px;
   text-align:center;
   color: #1C0F61;
+  margin-top:96px;
+  margin-bottom:24px;
+  @media (max-width:768px){
+    margin-top:48px;
+    font-size:20px;
+  }
 };
 
 .spc{
     width:464px;
-    text-align:center;
     margin:auto;
     font-size:22px;
     color:#14142B;
-  }
+    text-align:center;
+    margin-bottom:85px;
+    @media (max-width:768px){
+      font-size:15px;
+      width:60%;
+    };
+  };
+
+.faqs{
+  margin-bottom:48px;
+};
 
 
 `
@@ -101,7 +132,7 @@ const LoanCalculator = () => {
 
         <Button
           width='100%'
-          text='Get Started' />
+          text='Continue' />
       </div>
       <div className="loan-faq">
         <h3>Loans FAQs</h3>
