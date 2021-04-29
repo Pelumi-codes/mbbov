@@ -27,6 +27,7 @@ function App() {
         <Route exact path='/Investment' component={Investment}/>
         <Route exact path='/error' component={Error} />
         <Route exact path='/loan-calculator' component={LoanCalculator} />
+        <Route exact path='/form-test' component={FormTest} />
         
       </Router>
     </Layout>

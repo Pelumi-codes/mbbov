@@ -10,10 +10,10 @@ margin:5rem
 const FormTest = () => <Wrapper>
   
   <Form
-    fieldStyle='shortText'
-    inputType='text'
+    fieldStyle='password'
+    inputType='password'
     name='Name'
-    placeholder='Your Name'
+    placeholder='Your password'
     showError
   />
 

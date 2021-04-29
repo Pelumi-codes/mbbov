@@ -2,8 +2,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import {  check,
-    cancel} from '../../assets/index'
+import {
+  check,
+  cancel,
+  show_password,
+  hide_password,
+} from '../../assets/index'
 const Wrapper = styled.div
 `
   display: flex;
@@ -95,7 +99,8 @@ const Wrapper = styled.div
 `;
 const FormGroup = ({ fieldStyle, inputType, name, placeholder,showError }) => {
   const [showLabel, setShowLabel] = useState(false);
-  const [isTouched, setIsTouched] = useState(false)
+  const [isTouched, setIsTouched] = useState(false);
+  const [showPassword,setShowPassword] = useState(false)
   
   const validationHandler = () => {
      setIsTouched(
@@ -105,6 +110,7 @@ const FormGroup = ({ fieldStyle, inputType, name, placeholder,showError }) => {
      )
    
   }
+
   const toggleLabel = (e) => {
     if (e.target.value.length > 0) {
       setShowLabel(true);
@@ -112,6 +118,10 @@ const FormGroup = ({ fieldStyle, inputType, name, placeholder,showError }) => {
       setShowLabel(false);
     }
   };
+
+  const toggleShow = () => {
+    setShowPassword(!showPassword)
+  }
  
   const isTickValid = showLabel?
     <img src={ check} alt="check" /> : 
@@ -161,7 +171,7 @@ const FormGroup = ({ fieldStyle, inputType, name, placeholder,showError }) => {
           {showLabel && <label htmlFor={name}>{placeholder}</label>}
         </>
       )}
-      {!(fieldStyle === "shortText") && !(fieldStyle === "longText") && (
+      {!(fieldStyle === "shortText") && !(fieldStyle === "longText") &&!(fieldStyle==="password") && (
         <>
           <div className="flex order-1">
             <input
@@ -175,6 +185,30 @@ const FormGroup = ({ fieldStyle, inputType, name, placeholder,showError }) => {
              
             />
             {isTickValid}
+          </div>
+          <div><p className="errMessage">Uh oh! There was an error!</p></div>
+
+{showLabel && <label htmlFor={name}>{placeholder}</label>}
+        </>
+      )}
+      {fieldStyle === "password" && (
+        <>
+          <div className="flex order-1">
+            <input
+              className="textSmall"
+              type={showPassword ? 'text': inputType}
+              id={name}
+              name={name}
+              placeholder={placeholder}
+              onBlur={toggleLabel}
+              onChange={toggleLabel}
+             
+            />
+            <img
+              onClick={toggleShow}
+              src={showPassword ? show_password
+              :hide_password}
+              alt="" />
           </div>
           <div><p className="errMessage">Uh oh! There was an error!</p></div>
 

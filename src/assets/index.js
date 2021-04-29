@@ -51,6 +51,8 @@ import stroke from './icons/global/Vector (Stroke).svg'
 
 import checkmark from './icons/global/fluent_checkmark-circle-16-filled.svg'
 import investing from './icons/global/Investing-amico 5.svg'
+import hide_password from './icons/global/hide_password.svg'
+import show_password from './icons/global/show_password.svg'
 
 export {
   mbbovLogo,
@@ -96,5 +98,7 @@ export {
   investing,
   close,
   error,
-  nav_hamburger
+  nav_hamburger,
+  hide_password,
+  show_password
 }
