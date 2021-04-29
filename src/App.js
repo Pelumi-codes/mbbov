@@ -13,9 +13,11 @@ import Error from './pages/Error'
 
 import FormTest from './pages/FormTest'
 import LoanCalculator from './pages/LoanCalculator';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
+    <>
     <Layout>
       <Router>
         <Route exact path='/' component={Landing}/>
@@ -29,8 +31,11 @@ function App() {
         <Route exact path='/loan-calculator' component={LoanCalculator} />
         <Route exact path='/form-test' component={FormTest} />
         
+        <Route exact path='/dashboard' component={Dashboard} />
       </Router>
-    </Layout>
+      </Layout>
+     
+      </>
   );
 }
 
