@@ -15,6 +15,10 @@ span{
   color:#19191D;
   padding-bottom: 6px;
   font-weight:700;
+    width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 };
 
 img{

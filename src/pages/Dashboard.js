@@ -32,13 +32,13 @@ const CARDS = [
    { amount:'20',
      text:'Total Loans'
    },
-   {  amount:'₦ 1,000,000',
+   {  amount:'₦1,000,000000',
      text:'Total Amount Investment'
    },
-     { amount:'₦ 1,000,000',
+     { amount:'₦1,000,000',
        text:'Total Amount Saved'
      },
-     {amount:'₦ 1,000,000',
+     {amount:'₦1,000,000',
         text:'Total Amount Loaned'},
 ]
 

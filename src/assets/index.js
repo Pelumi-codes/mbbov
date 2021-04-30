@@ -55,6 +55,11 @@ import hide_password from './icons/global/hide_password.svg'
 import show_password from './icons/global/show_password.svg'
 import alert from './icons/global/alert.svg'
 import recent from './icons/global/recent.svg'
+import more from './icons/global/more.svg'
+import approved from './icons/global/approved.svg'
+import rejected from './icons/global/rejected.svg'
+import pending from './icons/global/pending.svg'
+import disbursed from './icons/global/disbursed.svg'
 
 export {
   mbbovLogo,
@@ -104,5 +109,10 @@ export {
   hide_password,
   show_password,
   alert,
-  recent
+  recent,
+  more,
+  approved,
+  rejected,
+  pending,
+  disbursed
 }
