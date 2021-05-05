@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import {more,rejected} from '../../../assets'
+import {more,rejected,approved,disbursed,pending} from '../../../assets'
 
 const Wrapper = styled.div`
    display: flex;
@@ -49,6 +49,18 @@ const Wrapper = styled.div`
     &&>:nth-child(10){
       display: flex;
       align-items:center;
+      color: ${props => {
+  switch (props.status) {
+    case 'pending':
+       return '#F4B400';
+    case 'approved':
+       return '#00BA88';
+    case 'disbursed':
+       return '#0B3A5B';
+    default:
+      return '#ED2E7E'
+        }
+      }};
       img{
         margin-right:7.33px;
         height: 13.33px;
@@ -62,10 +74,27 @@ const Wrapper = styled.div`
    };
   
    `
-   const TableItem = (props) => {
- const {name,id,accountType,planName,location,paymentMethod,start,end,status} = props
+
+
+   
+const TableItem = (props) => {
+     
+     const { name, id, accountType, planName, location, paymentMethod, start, end, status } = props;
+     const statusImage = () => {
+       switch (status.toLowerCase()) {
+         case 'approved':
+           return approved ;
+         case 'pending':
+           return pending ;
+         case 'disbursed':
+           return disbursed ;
+         default:
+           return rejected ;
+       }
+       }
+     
   return (
-    <Wrapper>
+    <Wrapper status={status.toLowerCase()}>
     <input type='checkbox' />
       <span>{name}</span>
       <span>{id}</span>
@@ -76,8 +105,9 @@ const Wrapper = styled.div`
       <span>{start}</span>
       <span>{end}</span>
       <div>
-        <img src={rejected} alt="status" />
+        <img src={statusImage()} alt="status" />
         <span>{status}</span>
+        {console.log(statusImage)}
       </div>
       <img src={more} alt="more-icon"/>
 

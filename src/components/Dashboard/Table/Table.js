@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import TableTitle from './TableTitle'
 import TableItem from './TableItem'
 
-const TABLE_ITEMS = [{
+const TABLE_ITEMS = [
+  {
   name: 'Cameron Williamson',
   id: 'iNV-1034',
   accountType: 'investment',
@@ -12,12 +13,88 @@ const TABLE_ITEMS = [{
   paymentMethod: 'Bank Transfer',
   start: '6/19/14',
   end: '6/19/14',
-  status: ''
+  status: 'Rejected'
+},
+  {
+  name: 'Esther Howard',
+  id: 'SAV-1034',
+  accountType: 'savings',
+  planName: 'Education Tuition',
+  location: 'Ibadan',
+  paymentMethod: 'Bank Transfer',
+  start: '6/19/14',
+  end: '6/19/14',
+  status: 'Pending'
+},
+  {
+  name: 'Darlene Robertson',
+  id: 'LON-1034',
+  accountType: 'Loans',
+  planName: 'Folder Plan',
+  location: 'Lagos',
+  paymentMethod: 'Paystack',
+  start: '6/19/14',
+  end: '6/19/14',
+  status: 'Approved'
+},
+  {
+  name: 'Dianne Russell',
+  id: 'iNV- 6670',
+  accountType: 'investment',
+  planName: 'Folder Plan',
+  location: 'Asaba',
+  paymentMethod: 'Bank Transfer',
+  start: '6/19/14',
+  end: '6/19/14',
+  status: 'Rejected'
+},
+  {
+  name: 'Savannah Nguyen',
+  id: 'iNV-1547',
+  accountType: 'investment',
+  planName: 'Folder Plan',
+  location: 'Ekiti',
+  paymentMethod: 'Bank Transfer',
+  start: '6/19/14',
+  end: '6/19/14',
+  status: 'Rejected'
+},
+  {
+  name: 'Savannah Nguyen',
+  id: 'iNV-1547',
+  accountType: 'investment',
+  planName: 'Folder Plan',
+  location: 'Ekiti',
+  paymentMethod: 'Bank Transfer',
+  start: '6/19/14',
+  end: '6/19/14',
+  status: 'Rejected'
+},
+  {
+  name: 'Savannah Nguyen',
+  id: 'iNV-1547',
+  accountType: 'investment',
+  planName: 'Folder Plan',
+  location: 'Abuja',
+  paymentMethod: 'Bank Transfer',
+  start: '6/19/14',
+  end: '6/19/14',
+  status: 'Rejected'
+},
+  {
+  name: 'Savannah Nguyen',
+  id: 'iNV-1547',
+  accountType: 'investment',
+  planName: 'Folder Plan',
+  location: 'Lagos',
+  paymentMethod: 'Paystack',
+  start: '6/19/14',
+  end: '6/19/14',
+  status: 'Disbursed'
 },
 ]
 
 const Wrapper = styled.div`
-  height: 20rem;
   width:100%;
   border-radius:10px;
   overflow: hidden;
@@ -45,7 +122,6 @@ const Table = () => {
           />
         )
       }
-      <TableItem/>
     </Wrapper>
   )
 }
