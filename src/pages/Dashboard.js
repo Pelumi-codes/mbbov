@@ -42,6 +42,21 @@ const CARDS = [
         text:'Total Amount Loaned'},
 ]
 
+
+const DASHBOARD_ITEMS = [
+  {
+      name: 'Cameron Williamson',
+      id:'iNV-1034',
+      accountType:'investment',
+      planName:'Folder Plan',
+      location:'Port Harcourt',
+      paymentMethod:'Bank Transfer',
+      start:'6/19/14',
+      end:'6/19/14',
+      status: ''
+  }
+]
+
 const Dashboard = () => {
   return (
     <Wrapper>

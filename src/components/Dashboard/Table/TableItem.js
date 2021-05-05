@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import {more} from '../../../assets'
+import {more,rejected} from '../../../assets'
 
 const Wrapper = styled.div`
    display: flex;
@@ -12,6 +12,9 @@ const Wrapper = styled.div`
    line-height:15.62px;
    background: white;
    
+   &&>*:not(:nth-child(3)){
+     text-transform:capitalize;
+   };
    &&>:nth-child(1){
      margin:0 24px;
    };
@@ -44,6 +47,12 @@ const Wrapper = styled.div`
       margin-right:24px;
     };
     &&>:nth-child(10){
+      display: flex;
+      align-items:center;
+      img{
+        margin-right:7.33px;
+        height: 13.33px;
+      };
       width:96.6px;
       // margin-right:16px;
    };
@@ -53,19 +62,23 @@ const Wrapper = styled.div`
    };
   
    `
-const TableItem = () => {
+   const TableItem = (props) => {
+ const {name,id,accountType,planName,location,paymentMethod,start,end,status} = props
   return (
     <Wrapper>
-      <input type='checkbox' />
-      <span>Name</span>
-      <span>ID</span>
-      <span>ACCOUNT TYPE</span>
-      <span>Plan name</span>
-      <span>Location</span>
-      <span>Payment method</span>
-      <span>Start date</span>
-      <span>Start end</span>
-      <span>sTATUS</span>
+    <input type='checkbox' />
+      <span>{name}</span>
+      <span>{id}</span>
+      <span>{accountType}</span>
+      <span>{planName}</span>
+      <span>{location}</span>
+      <span>{paymentMethod}</span>
+      <span>{start}</span>
+      <span>{end}</span>
+      <div>
+        <img src={rejected} alt="status" />
+        <span>{status}</span>
+      </div>
       <img src={more} alt="more-icon"/>
 
     </Wrapper>
