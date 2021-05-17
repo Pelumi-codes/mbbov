@@ -1,5 +1,148 @@
-import React from 'react'
+import React,{useMemo} from 'react'
 import styled from 'styled-components'
+import {useTable} from 'react-table'
+
+const COLUMNS = [
+  {
+  Header: <input type="checkbox"/>,
+  accessor:'checkbox'
+  },
+  {
+  Header: 'NAME',
+  accessor:'name'
+  },
+  {
+  Header: 'ID',
+  accessor:'id'
+  },
+  {
+  Header: 'ACCOUNT TYPE',
+  accessor:'accountType'
+  },
+  {
+  Header: 'PLAN NAME',
+  accessor:'planName'
+  },
+  {
+  Header: 'LOCATION',
+  accessor:'location'
+  },
+  {
+  Header: 'PAYMENT METHOD',
+  accessor:'paymentMethod'
+  },
+  {
+  Header: 'START',
+  accessor:'start'
+  },
+  {
+  Header: 'END',
+  accessor:'end'
+  },
+  {
+  Header: 'STATUS',
+  accessor:'status'
+  },
+]
+
+const DATA = [{
+  checkbox:<input type='checkbox'/>,
+    name: 'Cameron Williamson',
+    id: 'iNV-1034',
+    accountType: 'investment',
+    planName: 'Folder Plan',
+    location: 'Port Harcourt',
+    paymentMethod: 'Bank Transfer',
+    start: '6/19/14',
+    end: '6/19/14',
+    status: 'Rejected'
+  },
+  {
+    checkbox:<input type='checkbox'/>,
+    name: 'Esther Howard',
+    id: 'SAV-1034',
+    accountType: 'savings',
+    planName: 'Education Tuition',
+    location: 'Ibadan',
+    paymentMethod: 'Bank Transfer',
+    start: '6/19/14',
+    end: '6/19/14',
+    status: 'Pending'
+  },
+  {
+    checkbox:<input type='checkbox'/>,
+    name: 'Darlene Robertson',
+    id: 'LON-1034',
+    accountType: 'Loans',
+    planName: 'Folder Plan',
+    location: 'Lagos',
+    paymentMethod: 'Paystack',
+    start: '6/19/14',
+    end: '6/19/14',
+    status: 'Approved'
+  },
+  {
+    checkbox:<input type='checkbox'/>,
+    name: 'Dianne Russell',
+    id: 'iNV- 6670',
+    accountType: 'investment',
+    planName: 'Folder Plan',
+    location: 'Asaba',
+    paymentMethod: 'Bank Transfer',
+    start: '6/19/14',
+    end: '6/19/14',
+    status: 'Rejected'
+  },
+  {
+    checkbox:<input type='checkbox'/>,
+    name: 'Savannah Nguyen',
+    id: 'iNV-1547',
+    accountType: 'investment',
+    planName: 'Folder Plan',
+    location: 'Ekiti',
+    paymentMethod: 'Bank Transfer',
+    start: '6/19/14',
+    end: '6/19/14',
+    status: 'Rejected'
+  },
+  {
+    checkbox:<input type='checkbox'/>,
+    name: 'Savannah Nguyen',
+    id: 'iNV-1547',
+    accountType: 'investment',
+    planName: 'Folder Plan',
+    location: 'Ekiti',
+    paymentMethod: 'Bank Transfer',
+    start: '6/19/14',
+    end: '6/19/14',
+    status: 'Rejected'
+  },
+  {
+    checkbox:<input type='checkbox'/>,
+    name: 'Savannah Nguyen',
+    id: 'iNV-1547',
+    accountType: 'investment',
+    planName: 'Folder Plan',
+    location: 'Abuja',
+    paymentMethod: 'Bank Transfer',
+    start: '6/19/14',
+    end: '6/19/14',
+    status: 'Rejected'
+  },
+  {
+    checkbox:<input type='checkbox'/>,
+    name: 'Savannah Nguyen',
+    id: 'iNV-1547',
+    accountType: 'investment',
+    planName: 'Folder Plan',
+    location: 'Lagos',
+    paymentMethod: 'Paystack',
+    start: '6/19/14',
+    end: '6/19/14',
+    status: 'Disbursed'
+  },
+]
+/*
 import TableTitle from './TableTitle'
 import TableItem from './TableItem'
 
@@ -126,3 +269,132 @@ const Table = () => {
   )
 }
 export default Table;
+*/
+
+const TR = styled.tr`
+   margin:auto;
+   font-size:12px;
+   font-weight:400;
+   color:#899198;
+   height: 60px;
+   line-height:15.62px;
+   background: white;
+   
+   &&>*:not(:nth-child(3)){
+     text-transform:capitalize;
+   };
+   &&>:nth-child(1){
+     margin:0 24px;
+   };
+   &&>:nth-child(2){
+     width:142px;
+     margin-right:24px;
+    };
+    &&>:nth-child(3){
+      margin-right:24px;
+    width:79px;
+   };
+   &&>:nth-child(4){
+     width: 84px;
+     margin-right:16px;
+    };
+    &&>:nth-child(5){
+      width:119px;
+      margin-right:16px;
+   };
+   &&>:nth-child(6),&&>:nth-child(7){
+      width: 99px;
+      margin-right:16px;
+    };
+    &&>:nth-child(8){
+      width:54px;
+      margin-right:16px;
+    };
+    &&>:nth-child(9){
+      width:54px;
+      margin-right:24px;
+    };
+    &&>:nth-child(10){
+      display: flex;
+      align-items:center;
+      color: ${props => {
+  switch (props.status) {
+    case 'pending':
+       return '#F4B400';
+    case 'approved':
+       return '#00BA88';
+    case 'disbursed':
+       return '#0B3A5B';
+    default:
+      return '#ED2E7E'
+        }
+      }};
+      img{
+        margin-right:7.33px;
+        height: 13.33px;
+      };
+      width:96.6px;
+      // margin-right:16px;
+   };
+  
+    &&>:nth-child(11){
+      margin-right:35px;
+   };
+  
+   `
+
+
+
+const Table = () => {
+
+  const columns = useMemo(()=>COLUMNS,[])
+  const data = useMemo(() => DATA, [])
+  
+  const tableInstance = useTable({
+    columns,
+    data
+  })
+  
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow
+  } = tableInstance
+
+  return (
+    <table {...getTableProps}>
+      <thead>
+        {headerGroups.map((headerGroup) => (
+          <tr {...headerGroup.getHeaderGroupProps()}>
+            {headerGroup.headers.map((column) => (
+              <th {...column.getHeaderProps()}>
+                {column.render('Header')}
+              </th>
+            ))}
+          </tr>
+        ))}
+      </thead>
+
+      <tbody {...getTableBodyProps()}>
+        {rows.map((row) => {
+          prepareRow(row)
+          return (
+            <TR {...row.getRowProps()}>
+              {row.cells.map((cell) => {
+                return <td {...cell.getCellProps()}>
+                  {cell.render('Cell')}
+                </td>
+              })}
+            </TR>
+          )
+        })}
+
+      </tbody>
+
+
+    </table>
+  )
+}
+export default Table

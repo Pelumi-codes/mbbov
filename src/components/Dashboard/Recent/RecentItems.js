@@ -3,20 +3,21 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
 display:  flex;
+
 .left{
   display: flex;
   flex-direction:column;
   align-items: center;
   justify-content: strech;
   margin:0 9px 0 24px;
-};
+}
 
 .dots{
   width: 1px;
-  border-left:1px dotted #6E7191;
+  border-left:1px dashed #6E7191;
   margin:0 5px;
   height: calc(100% - 9px);
-};
+}
 .cir{
   height: 9px;
   width:9px;
@@ -24,18 +25,20 @@ display:  flex;
   border-radius:50%;
   padding: 0;
   margin:0;
-};
+}
 
 
 .text{
   font-size:12px;
   width:236px;
   height: 100%;
+
   p{
     color:#8D87B0;
     line-height:16.8px;
     font-weight:500;
-  };
+  }
+
   span{
     color: #4E4B66;
     margin-top:6px;

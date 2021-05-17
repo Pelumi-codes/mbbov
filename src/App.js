@@ -14,6 +14,7 @@ import Error from './pages/Error'
 import FormTest from './pages/FormTest'
 import LoanCalculator from './pages/LoanCalculator';
 import Dashboard from './pages/Dashboard';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route exact path='/form-test' component={FormTest} />
         
         <Route exact path='/dashboard' component={Dashboard} />
+        <Route exact path='/Login' component={Login} />
       </Router>
       </Layout>
      

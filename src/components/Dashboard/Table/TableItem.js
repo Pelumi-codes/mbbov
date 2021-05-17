@@ -107,7 +107,6 @@ const TableItem = (props) => {
       <div>
         <img src={statusImage()} alt="status" />
         <span>{status}</span>
-        {console.log(statusImage)}
       </div>
       <img src={more} alt="more-icon"/>
 
