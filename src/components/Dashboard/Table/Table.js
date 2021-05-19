@@ -271,7 +271,14 @@ const Table = () => {
 export default Table;
 */
 
-const TR = styled.tr`
+const TableWrapper = styled.table`
+border-collapse:collapse;
+tr + tr, thead  +  tbody{
+  border: 1px solid #E5E5E5;
+}
+`
+
+const Tr = styled.tr`
    margin:auto;
    font-size:12px;
    font-weight:400;
@@ -315,20 +322,7 @@ const TR = styled.tr`
       margin-right:24px;
     };
     &&>:nth-child(10){
-      display: flex;
       align-items:center;
-      color: ${props => {
-  switch (props.status) {
-    case 'pending':
-       return '#F4B400';
-    case 'approved':
-       return '#00BA88';
-    case 'disbursed':
-       return '#0B3A5B';
-    default:
-      return '#ED2E7E'
-        }
-      }};
       img{
         margin-right:7.33px;
         height: 13.33px;
@@ -341,6 +335,24 @@ const TR = styled.tr`
       margin-right:35px;
    };
   
+   `
+
+const Td = styled.td`
+    color: ${props => {
+  switch (props.status) {
+    case ('Pending'):
+       return '#F4B400';
+    case  'Approved':
+       return '#00BA88';
+    case 'Disbursed':
+       return '#0B3A5B';
+    case 'Rejected':
+       return '#ED2E7E';
+    default:
+      return '#899198'
+        }
+      }};
+
    `
 
 
@@ -364,16 +376,16 @@ const Table = () => {
   } = tableInstance
 
   return (
-    <table {...getTableProps}>
+    <TableWrapper {...getTableProps}>
       <thead>
         {headerGroups.map((headerGroup) => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
+          <Tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
               <th {...column.getHeaderProps()}>
                 {column.render('Header')}
               </th>
             ))}
-          </tr>
+          </Tr>
         ))}
       </thead>
 
@@ -381,20 +393,20 @@ const Table = () => {
         {rows.map((row) => {
           prepareRow(row)
           return (
-            <TR {...row.getRowProps()}>
+            <Tr {...row.getRowProps()}>
               {row.cells.map((cell) => {
-                return <td {...cell.getCellProps()}>
+                return <Td status={cell.value} >
                   {cell.render('Cell')}
-                </td>
+                </Td>
               })}
-            </TR>
+            </Tr>
           )
         })}
 
       </tbody>
 
 
-    </table>
+    </TableWrapper>
   )
 }
 export default Table
