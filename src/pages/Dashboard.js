@@ -21,6 +21,13 @@ background: #E5E5E5;
 display: flex;
 }
 
+.table_ctn{
+  width:auto;
+  height: 540px;
+  padding: 0 24px;
+  overflow: scroll;
+}
+
 `
 const CARDS = [
     { amount:'20',
@@ -68,7 +75,9 @@ const Dashboard = () => {
       </div>
       <div className='recentNTable'>
         <Recent />
-        <Table/>
+        <div className="table_ctn">
+          <Table/>
+        </div>
       </div>
     </Wrapper>
   )

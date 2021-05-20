@@ -1,277 +1,23 @@
 import React,{useMemo} from 'react'
 import styled from 'styled-components'
 import {useTable} from 'react-table'
+import COLUMNS from './COLUMNS'
+import DATA from './DATA'
+import {
+  rejected,
+  pending,
+  disbursed,
+  approved,
+  more
+} from '../../../assets/index'
 
-const COLUMNS = [
-  {
-  Header: <input type="checkbox"/>,
-  accessor:'checkbox'
-  },
-  {
-  Header: 'NAME',
-  accessor:'name'
-  },
-  {
-  Header: 'ID',
-  accessor:'id'
-  },
-  {
-  Header: 'ACCOUNT TYPE',
-  accessor:'accountType'
-  },
-  {
-  Header: 'PLAN NAME',
-  accessor:'planName'
-  },
-  {
-  Header: 'LOCATION',
-  accessor:'location'
-  },
-  {
-  Header: 'PAYMENT METHOD',
-  accessor:'paymentMethod'
-  },
-  {
-  Header: 'START',
-  accessor:'start'
-  },
-  {
-  Header: 'END',
-  accessor:'end'
-  },
-  {
-  Header: 'STATUS',
-  accessor:'status'
-  },
-]
 
-const DATA = [{
-  checkbox:<input type='checkbox'/>,
-    name: 'Cameron Williamson',
-    id: 'iNV-1034',
-    accountType: 'investment',
-    planName: 'Folder Plan',
-    location: 'Port Harcourt',
-    paymentMethod: 'Bank Transfer',
-    start: '6/19/14',
-    end: '6/19/14',
-    status: 'Rejected'
-  },
-  {
-    checkbox:<input type='checkbox'/>,
-    name: 'Esther Howard',
-    id: 'SAV-1034',
-    accountType: 'savings',
-    planName: 'Education Tuition',
-    location: 'Ibadan',
-    paymentMethod: 'Bank Transfer',
-    start: '6/19/14',
-    end: '6/19/14',
-    status: 'Pending'
-  },
-  {
-    checkbox:<input type='checkbox'/>,
-    name: 'Darlene Robertson',
-    id: 'LON-1034',
-    accountType: 'Loans',
-    planName: 'Folder Plan',
-    location: 'Lagos',
-    paymentMethod: 'Paystack',
-    start: '6/19/14',
-    end: '6/19/14',
-    status: 'Approved'
-  },
-  {
-    checkbox:<input type='checkbox'/>,
-    name: 'Dianne Russell',
-    id: 'iNV- 6670',
-    accountType: 'investment',
-    planName: 'Folder Plan',
-    location: 'Asaba',
-    paymentMethod: 'Bank Transfer',
-    start: '6/19/14',
-    end: '6/19/14',
-    status: 'Rejected'
-  },
-  {
-    checkbox:<input type='checkbox'/>,
-    name: 'Savannah Nguyen',
-    id: 'iNV-1547',
-    accountType: 'investment',
-    planName: 'Folder Plan',
-    location: 'Ekiti',
-    paymentMethod: 'Bank Transfer',
-    start: '6/19/14',
-    end: '6/19/14',
-    status: 'Rejected'
-  },
-  {
-    checkbox:<input type='checkbox'/>,
-    name: 'Savannah Nguyen',
-    id: 'iNV-1547',
-    accountType: 'investment',
-    planName: 'Folder Plan',
-    location: 'Ekiti',
-    paymentMethod: 'Bank Transfer',
-    start: '6/19/14',
-    end: '6/19/14',
-    status: 'Rejected'
-  },
-  {
-    checkbox:<input type='checkbox'/>,
-    name: 'Savannah Nguyen',
-    id: 'iNV-1547',
-    accountType: 'investment',
-    planName: 'Folder Plan',
-    location: 'Abuja',
-    paymentMethod: 'Bank Transfer',
-    start: '6/19/14',
-    end: '6/19/14',
-    status: 'Rejected'
-  },
-  {
-    checkbox:<input type='checkbox'/>,
-    name: 'Savannah Nguyen',
-    id: 'iNV-1547',
-    accountType: 'investment',
-    planName: 'Folder Plan',
-    location: 'Lagos',
-    paymentMethod: 'Paystack',
-    start: '6/19/14',
-    end: '6/19/14',
-    status: 'Disbursed'
-  },
-]
-/*
-import TableTitle from './TableTitle'
-import TableItem from './TableItem'
 
-const TABLE_ITEMS = [
-  {
-  name: 'Cameron Williamson',
-  id: 'iNV-1034',
-  accountType: 'investment',
-  planName: 'Folder Plan',
-  location: 'Port Harcourt',
-  paymentMethod: 'Bank Transfer',
-  start: '6/19/14',
-  end: '6/19/14',
-  status: 'Rejected'
-},
-  {
-  name: 'Esther Howard',
-  id: 'SAV-1034',
-  accountType: 'savings',
-  planName: 'Education Tuition',
-  location: 'Ibadan',
-  paymentMethod: 'Bank Transfer',
-  start: '6/19/14',
-  end: '6/19/14',
-  status: 'Pending'
-},
-  {
-  name: 'Darlene Robertson',
-  id: 'LON-1034',
-  accountType: 'Loans',
-  planName: 'Folder Plan',
-  location: 'Lagos',
-  paymentMethod: 'Paystack',
-  start: '6/19/14',
-  end: '6/19/14',
-  status: 'Approved'
-},
-  {
-  name: 'Dianne Russell',
-  id: 'iNV- 6670',
-  accountType: 'investment',
-  planName: 'Folder Plan',
-  location: 'Asaba',
-  paymentMethod: 'Bank Transfer',
-  start: '6/19/14',
-  end: '6/19/14',
-  status: 'Rejected'
-},
-  {
-  name: 'Savannah Nguyen',
-  id: 'iNV-1547',
-  accountType: 'investment',
-  planName: 'Folder Plan',
-  location: 'Ekiti',
-  paymentMethod: 'Bank Transfer',
-  start: '6/19/14',
-  end: '6/19/14',
-  status: 'Rejected'
-},
-  {
-  name: 'Savannah Nguyen',
-  id: 'iNV-1547',
-  accountType: 'investment',
-  planName: 'Folder Plan',
-  location: 'Ekiti',
-  paymentMethod: 'Bank Transfer',
-  start: '6/19/14',
-  end: '6/19/14',
-  status: 'Rejected'
-},
-  {
-  name: 'Savannah Nguyen',
-  id: 'iNV-1547',
-  accountType: 'investment',
-  planName: 'Folder Plan',
-  location: 'Abuja',
-  paymentMethod: 'Bank Transfer',
-  start: '6/19/14',
-  end: '6/19/14',
-  status: 'Rejected'
-},
-  {
-  name: 'Savannah Nguyen',
-  id: 'iNV-1547',
-  accountType: 'investment',
-  planName: 'Folder Plan',
-  location: 'Lagos',
-  paymentMethod: 'Paystack',
-  start: '6/19/14',
-  end: '6/19/14',
-  status: 'Disbursed'
-},
-]
 
-const Wrapper = styled.div`
-  width:100%;
-  border-radius:10px;
-  overflow: hidden;
-  &&> div + div {
-    margin-top:1px;
-  }
-`
 
-const Table = () => {
-  return (
-    <Wrapper>
-      <TableTitle />
-      {
-        TABLE_ITEMS.map(
-          item => <TableItem
-            name={item.name}
-            id={item.id}
-            accountType={item.accountType}
-            planName={item.planName}
-            location={item.location}
-            paymentMethod={item.paymentMethod}
-            start={item.start}
-            end={item.end}
-            status={item.status}
-          />
-        )
-      }
-    </Wrapper>
-  )
-}
-export default Table;
-*/
 
 const TableWrapper = styled.table`
+width:1114px;
 border-collapse:collapse;
 tr + tr, thead  +  tbody{
   border: 1px solid #E5E5E5;
@@ -279,61 +25,76 @@ tr + tr, thead  +  tbody{
 `
 
 const Tr = styled.tr`
-   margin:auto;
    font-size:12px;
    font-weight:400;
    color:#899198;
    height: 60px;
    line-height:15.62px;
    background: white;
+   text-align:left;
+
+   th:nth-child(4){
+     padding-right: 3rem;
+   }
+   th:nth-child(5){
+     padding-right: 5rem;
+   }
+   th:nth-child(7){
+     padding-right: 0.8rem;
+   }
    
    &&>*:not(:nth-child(3)){
      text-transform:capitalize;
    };
    &&>:nth-child(1){
+     display: flex;
      margin:0 24px;
+     height: 100%;
+     align-items: center;
+
    };
    &&>:nth-child(2){
-     width:142px;
-     margin-right:24px;
+     width:166px;
     };
     &&>:nth-child(3){
-      margin-right:24px;
-    width:79px;
+    width:103px;
    };
    &&>:nth-child(4){
-     width: 84px;
-     margin-right:16px;
+     width: 100px;
     };
     &&>:nth-child(5){
-      width:119px;
-      margin-right:16px;
+      width:135px;
    };
    &&>:nth-child(6),&&>:nth-child(7){
-      width: 99px;
-      margin-right:16px;
+      width: 115px;
     };
     &&>:nth-child(8){
-      width:54px;
-      margin-right:16px;
+      width:70px;
     };
     &&>:nth-child(9){
-      width:54px;
-      margin-right:24px;
+      width:78px;
     };
     &&>:nth-child(10){
+      display: flex;
       align-items:center;
-      img{
-        margin-right:7.33px;
-        height: 13.33px;
-      };
-      width:96.6px;
-      // margin-right:16px;
+      height:60px;
+      width:184px;
+      padding-left:24px;
+      padding-right:35px;
    };
+   .status_icon{
+    margin-right:7.33px;
+        height: 13.33px;
+        display: block;
+   }
+   .more_icon{
+     margin-left:auto;
+   }
   
     &&>:nth-child(11){
       margin-right:35px;
    };
+
   
    `
 
@@ -395,9 +156,36 @@ const Table = () => {
           return (
             <Tr {...row.getRowProps()}>
               {row.cells.map((cell) => {
-                return <Td status={cell.value} >
+                switch(cell.value){
+                  case 'Rejected':
+                    return <Td status={cell.value} >
+                      <img className='status_icon' src={rejected} alt="reject"/>
+                      <span>{cell.render('Cell')}</span>
+                      <img className='more_icon' src={more} alt="reject"/>
+                      </Td>
+                  case 'Pending':
+                    return <Td status={cell.value} >
+                      <img className='status_icon' src={pending} alt="reject"/>
+                      <span>{cell.render('Cell')}</span>
+                      <img className='more_icon' src={more} alt="reject"/>
+                      </Td>
+                  case 'Approved':
+                    return <Td status={cell.value} >
+                      <img className='status_icon' src={approved} alt="reject"/>
+                      <span>{cell.render('Cell')}</span>
+                      <img className='more_icon' src={more} alt="reject"/>
+                      </Td>
+                  case 'Disbursed':
+                    return <Td status={cell.value} >
+                      <img className='status_icon' src={disbursed} alt="reject"/>
+                      <span>{cell.render('Cell')}</span>
+                      <img className='more_icon' src={more} alt="reject"/>
+                      </Td>
+                  default:
+                    return <Td status={cell.value} >
                   {cell.render('Cell')}
                 </Td>
+                }
               })}
             </Tr>
           )

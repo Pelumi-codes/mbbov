@@ -1,0 +1,98 @@
+const DATA = [{
+  checkbox:<input type='checkbox'/>,
+    name: 'Cameron Williamson',
+    id: 'iNV-1034',
+    accountType: 'investment',
+    planName: 'Folder Plan',
+    location: 'Port Harcourt',
+    paymentMethod: 'Bank Transfer',
+    start: '6/19/14',
+    end: '6/19/14',
+    status: 'Rejected'
+  },
+  {
+    checkbox:<input type='checkbox'/>,
+    name: 'Esther Howard',
+    id: 'SAV-1034',
+    accountType: 'savings',
+    planName: 'Education Tuition',
+    location: 'Ibadan',
+    paymentMethod: 'Bank Transfer',
+    start: '6/19/14',
+    end: '6/19/14',
+    status: 'Pending'
+  },
+  {
+    checkbox:<input type='checkbox'/>,
+    name: 'Darlene Robertson',
+    id: 'LON-1034',
+    accountType: 'Loans',
+    planName: 'Folder Plan',
+    location: 'Lagos',
+    paymentMethod: 'Paystack',
+    start: '6/19/14',
+    end: '6/19/14',
+    status: 'Approved'
+  },
+  {
+    checkbox:<input type='checkbox'/>,
+    name: 'Dianne Russell',
+    id: 'iNV- 6670',
+    accountType: 'investment',
+    planName: 'Folder Plan',
+    location: 'Asaba',
+    paymentMethod: 'Bank Transfer',
+    start: '6/19/14',
+    end: '6/19/14',
+    status: 'Rejected'
+  },
+  {
+    checkbox:<input type='checkbox'/>,
+    name: 'Savannah Nguyen',
+    id: 'iNV-1547',
+    accountType: 'investment',
+    planName: 'Folder Plan',
+    location: 'Ekiti',
+    paymentMethod: 'Bank Transfer',
+    start: '6/19/14',
+    end: '6/19/14',
+    status: 'Rejected'
+  },
+  {
+    checkbox:<input type='checkbox'/>,
+    name: 'Savannah Nguyen',
+    id: 'iNV-1547',
+    accountType: 'investment',
+    planName: 'Folder Plan',
+    location: 'Ekiti',
+    paymentMethod: 'Bank Transfer',
+    start: '6/19/14',
+    end: '6/19/14',
+    status: 'Rejected'
+  },
+  {
+    checkbox:<input type='checkbox'/>,
+    name: 'Savannah Nguyen',
+    id: 'iNV-1547',
+    accountType: 'investment',
+    planName: 'Folder Plan',
+    location: 'Abuja',
+    paymentMethod: 'Bank Transfer',
+    start: '6/19/14',
+    end: '6/19/14',
+    status: 'Rejected'
+  },
+  {
+    checkbox:<input type='checkbox'/>,
+    name: 'Savannah Nguyen',
+    id: 'iNV-1547',
+    accountType: 'investment',
+    planName: 'Folder Plan',
+    location: 'Lagos',
+    paymentMethod: 'Paystack',
+    start: '6/19/14',
+    end: '6/19/14',
+    status: 'Disbursed'
+  },
+]
+export default DATA;
