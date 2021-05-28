@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import Card from '../components/Dashboard/Card'
-import Recent from '../components/Dashboard/Recent/Recent'
-import Table from '../components/Dashboard/Table/Table'
+import Card from './Card'
+import Recent from './Recent/Recent'
+import Table from './Table/Table'
 
 const Wrapper = styled.div`
 padding: 48px 0;
@@ -19,14 +19,17 @@ background: #E5E5E5;
 
 .recentNTable{
 display: flex;
+padding: 0 24px;
 }
 
 .table_ctn{
-  width:auto;
+  width:${props => props.showRecent ? '1114px' : '100vw'};
   height: 540px;
-  padding: 0 24px;
-  overflow: scroll;
+  overflow: auto;
+  box-sizing:border-box;
+  background: #E5E5E5;
 }
+
 
 `
 const CARDS = [
@@ -64,9 +67,11 @@ const DASHBOARD_ITEMS = [
   }
 ]
 
-const Dashboard = () => {
+const Dashboard = (props) => {
+  const { columnsObject, dataObject, showRecent } = props
+  
   return (
-    <Wrapper>
+    <Wrapper {...props}>
       <div className='cards'>
       {CARDS.map(
         card => <Card amount={card.amount} text={card.text} />
@@ -74,9 +79,9 @@ const Dashboard = () => {
       }
       </div>
       <div className='recentNTable'>
-        <Recent />
+        {showRecent && <Recent />}
         <div className="table_ctn">
-          <Table/>
+          <Table {...props}/>
         </div>
       </div>
     </Wrapper>

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { alert } from '../../assets'
+import { alert } from '../../../assets'
 const Wrapper = styled.div`
 border-radius:10px;
 padding: 29px 12px;

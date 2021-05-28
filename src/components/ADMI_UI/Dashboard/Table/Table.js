@@ -2,14 +2,14 @@ import React,{useMemo} from 'react'
 import styled from 'styled-components'
 import {useTable} from 'react-table'
 import COLUMNS from './COLUMNS'
-import DATA from './DATA'
+import DATA from '../../LoginDashboard/DATA'
 import {
   rejected,
   pending,
   disbursed,
   approved,
   more
-} from '../../../assets/index'
+} from '../../../../assets'
 
 
 
@@ -17,14 +17,13 @@ import {
 
 
 const TableWrapper = styled.table`
-width:1114px;
+width:${props=> props.showRecent ? '1114px' : '1392px'};
 border-collapse:collapse;
 tr + tr, thead  +  tbody{
   border: 1px solid #E5E5E5;
 }
-`
 
-const Tr = styled.tr`
+tr{
    font-size:12px;
    font-weight:400;
    color:#899198;
@@ -34,94 +33,110 @@ const Tr = styled.tr`
    text-align:left;
 
    th:nth-child(4){
-     padding-right: 3rem;
+     padding-right: ${props =>props.showRecent ?'3rem' : '5rem'};
    }
    th:nth-child(5){
-     padding-right: 5rem;
+     padding-right: ${props =>props.showRecent ?'5rem' : '2rem'};
+   }
+   th:nth-child(6){
+     padding-right: ${props =>props.showRecent ?'0' : '3rem'};
    }
    th:nth-child(7){
      padding-right: 0.8rem;
    }
+   th:nth-child(8),th:nth-child(8),
+   th:nth-child(9),
+   th:nth-child(10){
+     padding-right: ${props =>props.showRecent ?  '0' : '3rem' } ;
+   }
+
    
-   &&>*:not(:nth-child(3)){
+   
+   td*:not(:nth-child(3)),
+   th*:not(:nth-child(3)){
      text-transform:capitalize;
    };
-   &&>:nth-child(1){
+   td:nth-child(1),
+   th:nth-child(1){
      display: flex;
-     margin:0 24px;
-     height: 100%;
+     margin:${props =>props.showRecent ?  '0 24px' : '0 27px' } ;
+     height: 60px;
      align-items: center;
-
    };
-   &&>:nth-child(2){
-     width:166px;
+   td:nth-child(2),th:nth-child(2){
+     width:${props => props.showRecent ? '166px' : '226px'};
     };
-    &&>:nth-child(3){
-    width:103px;
+    td:nth-child(3){
+      width:${props=>props.showRecent ? '103px' : '105px'};
    };
-   &&>:nth-child(4){
-     width: 100px;
+   td:nth-child(4){
+     width:${props=>props.showRecent ? '100px' : '133px'};
     };
-    &&>:nth-child(5){
-      width:135px;
+    td:nth-child(5){
+      width:${props=>props.showRecent ? '135px' : '90px'};
    };
-   &&>:nth-child(6),&&>:nth-child(7){
+   td:nth-child(6){
       width: 115px;
+      width:${props=>props.showRecent ? '115px' : '90px'};
     };
-    &&>:nth-child(8){
+    td:nth-child(7){
       width:70px;
+      width:${props=>props.showRecent ? '115px' : '108px'};
     };
-    &&>:nth-child(9){
-      width:78px;
+    td:nth-child(8){
+      width:${props=>props.showRecent ? '70px' : '156px'} ;
     };
-    &&>:nth-child(10){
-      display: flex;
+    td:nth-child(9){
+      width:${props => props.showRecent ? '70px' : '156px'};
+    };
+    td:nth-child(10){
+      display: ${props => props.showRecent ? 'flex' : ''};
       align-items:center;
       height:60px;
-      width:184px;
-      padding-left:24px;
-      padding-right:35px;
+      width:${props=>props.showRecent ? '184px' : '132px'};
    };
+    td:nth-child(11){
+      width:123px;
+      display: flex;
+      height: 60px;
+      align-items:center;
+      padding-right:22px;
+      
+    }
    .status_icon{
     margin-right:7.33px;
         height: 13.33px;
-        display: block;
    }
    .more_icon{
      margin-left:auto;
    }
   
-    &&>:nth-child(11){
-      margin-right:35px;
-   };
-
   
-   `
+}
 
-const Td = styled.td`
-    color: ${props => {
-  switch (props.status) {
-    case ('Pending'):
-       return '#F4B400';
-    case  'Approved':
-       return '#00BA88';
-    case 'Disbursed':
-       return '#0B3A5B';
-    case 'Rejected':
-       return '#ED2E7E';
-    default:
-      return '#899198'
-        }
-      }};
 
-   `
+.pending{
+  color: #F4B400;
+}
+.approved{
+  color: #00BA88;
+}
+.disbursed{
+  color: #0B3A5B;
+}
+.rejected{
+  color: #ED2E7E;
+}
+`
 
 
 
-const Table = () => {
 
-  const columns = useMemo(()=>COLUMNS,[])
-  const data = useMemo(() => DATA, [])
+
+const Table = ({columnsObject ,dataObject,showRecent}) => {
+
+  const columns = useMemo(() => columnsObject || COLUMNS, [])
+  const data = useMemo(() => dataObject, [])
   
   const tableInstance = useTable({
     columns,
@@ -137,16 +152,18 @@ const Table = () => {
   } = tableInstance
 
   return (
-    <TableWrapper {...getTableProps}>
+    <TableWrapper
+      showRecent={showRecent}
+      {...getTableProps} >
       <thead>
         {headerGroups.map((headerGroup) => (
-          <Tr {...headerGroup.getHeaderGroupProps()}>
+          <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
               <th {...column.getHeaderProps()}>
                 {column.render('Header')}
               </th>
             ))}
-          </Tr>
+          </tr>
         ))}
       </thead>
 
@@ -154,40 +171,44 @@ const Table = () => {
         {rows.map((row) => {
           prepareRow(row)
           return (
-            <Tr {...row.getRowProps()}>
+            <tr {...row.getRowProps()}>
               {row.cells.map((cell) => {
+                if (indexOf(cell.value) === 2) {
+                  // cell.value = 'hi'
+                }
                 switch(cell.value){
                   case 'Rejected':
-                    return <Td status={cell.value} >
+                    return <td className='rejected' >
                       <img className='status_icon' src={rejected} alt="reject"/>
                       <span>{cell.render('Cell')}</span>
                       <img className='more_icon' src={more} alt="reject"/>
-                      </Td>
+                      </td>
                   case 'Pending':
-                    return <Td status={cell.value} >
+                    return <td className='pending' >
                       <img className='status_icon' src={pending} alt="reject"/>
                       <span>{cell.render('Cell')}</span>
                       <img className='more_icon' src={more} alt="reject"/>
-                      </Td>
+                      </td>
                   case 'Approved':
-                    return <Td status={cell.value} >
+                    return <td className='approved' >
                       <img className='status_icon' src={approved} alt="reject"/>
                       <span>{cell.render('Cell')}</span>
                       <img className='more_icon' src={more} alt="reject"/>
-                      </Td>
+                      </td>
                   case 'Disbursed':
-                    return <Td status={cell.value} >
+                    return <td className='disbursed' >
                       <img className='status_icon' src={disbursed} alt="reject"/>
                       <span>{cell.render('Cell')}</span>
                       <img className='more_icon' src={more} alt="reject"/>
-                      </Td>
+                      </td>
                   default:
-                    return <Td status={cell.value} >
+                    return <td  >
                   {cell.render('Cell')}
-                </Td>
+                </td>
                 }
               })}
-            </Tr>
+              {console.log(row.cells)}
+            </tr>
           )
         })}
 

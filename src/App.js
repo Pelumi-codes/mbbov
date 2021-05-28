@@ -13,8 +13,11 @@ import Error from './pages/Error'
 
 import FormTest from './pages/FormTest'
 import LoanCalculator from './pages/LoanCalculator';
-import Dashboard from './pages/Dashboard';
+import LoginDashboard from './pages/LoginDashboard';
 import Login from './pages/Login';
+
+import InvestmentDashboard from './pages/InvestmentDashboard';
+
 
 function App() {
   return (
@@ -32,8 +35,10 @@ function App() {
         <Route exact path='/loan-calculator' component={LoanCalculator} />
         <Route exact path='/form-test' component={FormTest} />
         
-        <Route exact path='/dashboard' component={Dashboard} />
-        <Route exact path='/Login' component={Login} />
+          <Route exact path='/Login' component={Login} />
+          
+        <Route exact path='/login-dashboard' component={LoginDashboard} />
+        <Route exact path='/investment-dashboard' component={InvestmentDashboard} />
       </Router>
       </Layout>
      

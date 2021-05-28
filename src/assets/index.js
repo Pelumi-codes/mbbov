@@ -61,6 +61,8 @@ import rejected from './icons/global/rejected.svg'
 import pending from './icons/global/pending.svg'
 import disbursed from './icons/global/disbursed.svg'
 
+import db_avatar1 from  './images/global/dashboard_avatar/db_avatar1.png'
+
 export {
   mbbovLogo,
   Landing1,
@@ -114,5 +116,7 @@ export {
   approved,
   rejected,
   pending,
-  disbursed
+  disbursed,
+
+db_avatar1
 }

@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import RecentItems from './RecentItems'
-import {recent} from '../../../assets'
+import {recent} from '../../../../assets'
 
 const Wrapper = styled.div`
+margin-right 24px;
 .heading{
 display: flex;
 margin-bottom:12px;
@@ -28,9 +29,14 @@ align-items:center;
 
 .recent > :last-child > :first-child> :last-child{
   display: none;
-}'
+}
 
-
+.viewAll{
+  font-size:12px;
+    color: #8D87B0;
+    text-align:right;
+    text-decoration:underline;
+}
 `
 const ACTIVITIES = [
   {
@@ -64,6 +70,7 @@ const Recent = () => {
       )
       }
       </div>
+      <p  className='viewAll'>View all</p>
     </Wrapper>
   )
 }
