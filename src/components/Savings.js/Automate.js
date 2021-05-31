@@ -8,6 +8,10 @@ import {payment} from '../../assets/index'
 
 const Wrapper = styled.div`
         padding: 100px 72px;
+
+        .image{
+            width:100%;
+        }
         
         .flex{
             display:flex;
@@ -123,8 +127,8 @@ const Header= () => {
     return (
       <Wrapper>
           <div className="flex family flex-center between">
-            <div className="">
-                <img src={payment} alt=""/>
+            <div>
+                <img className="image" src={payment} alt=""/>
             </div>
             <div className="">
                         <h2 className="size-48 width-545">Never forget to automate your savings.</h2>

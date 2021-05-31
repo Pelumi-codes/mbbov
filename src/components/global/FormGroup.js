@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { check, cancel } from "../../assets/index";
-
+import {
+  check,
+  cancel,
+  show_password,
+  hide_password,
+} from "../../assets/index";
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column-reverse;
@@ -10,41 +14,46 @@ const Wrapper = styled.div`
   width: 100%;
   height: ${(props) =>
     props.fieldStyle === "longText" ? "fit-content" : "auto"};
-  background: #eff0f6;
   border-radius: 1.2rem;
   padding: ${(props) =>
     props.fieldStyle === "longText" ? "0rem 0rem" : "0rem 0rem"};
+
+  input::-webkit-input-placeholder {
+    font-size: 16px;
+  }
+
   input,
   textarea {
     display: block;
-    color: #000000;
+    color: #0c0c0c;
     width: 100%;
     background-color: #ffffff;
     border: none;
+    border: 1px solid #d9dbe9;
+    border-radius: 4px;
     height: 50px;
     padding: 30px;
     order: 2;
-    background-color: ${(props) => {
-      return props.isValid ? "#F2FFFB" : "#FFFFFF";
-    }};
+    background-color: ${(props) => (props.isValid ? "#F2FFFB" : "#FFFFFF")};
+    font-size: 16px;
   }
   textarea {
     height: 199px;
   }
   label {
     display: block;
-    color: #6e7191;
+    color: #00ba88;
     font-size: 12px;
-    margin-bottom: -0.7rem;
-    margin-left: 1rem;
+    margin-bottom: -16px;
+    margin-left: 16px;
     width: fit-content;
-    padding: 2px 5px;
-    background-color: #ffffff;
-    border-radius: 5px;
+    padding: 8px;
+    background-color: #f2fffb;
     order: 1;
   }
-  input:focus {
-    border: 1px solid #7b61ff;
+  input:focus,
+  textarea:focus {
+    border: 1px solid #1c0f61;
   }
   input:not(:valid) {
     background-color: #fff3f8;
@@ -65,10 +74,16 @@ const Wrapper = styled.div`
     // display:none;
   }
   img {
-    width: 1.8rem;
+    width: 16px;
+    height: 16px;
     order: 7;
-    margin-left: -3rem;
-    // display:none;
+    margin: auto 0 auto -3rem;
+    ${(props) =>
+      props.fieldStyle === "longText" ? "margin-bottom:30px" : null}
+  }
+
+  .flex {
+    display: flex;
   }
   .flex {
     display: flex;
@@ -88,13 +103,14 @@ const FormGroup = ({
 }) => {
   const [showLabel, setShowLabel] = useState(false);
   const [isTouched, setIsTouched] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const validationHandler = () => {
     setIsTouched((prev) => {
-      console.log("Previous state", prev);
       return true;
     });
   };
+
   const toggleLabel = (e) => {
     if (e.target.value.length > 0) {
       setShowLabel(true);
@@ -102,6 +118,12 @@ const FormGroup = ({
       setShowLabel(false);
     }
   };
+
+  const toggleShow = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const isTickValid = showLabel ? <img src={check} alt="check" /> : null;
 
   return (
     <Wrapper isValid={showLabel} fieldStyle={fieldStyle} showError={showError}>
@@ -117,9 +139,9 @@ const FormGroup = ({
               onBlur={toggleLabel}
               onChange={toggleLabel}
               onFocus={validationHandler}
-              required={required}
+              showError={showError}
             />
-            <img src={check} alt="check" />
+            {isTickValid}
           </div>
           <div>
             <p className="errMessage">Uh oh! There was an error!</p>
@@ -135,34 +157,62 @@ const FormGroup = ({
               id={name}
               name={name}
               placeholder={placeholder}
-              required={required}
+              onBlur={toggleLabel}
+              onChange={toggleLabel}
+              onFocus={validationHandler}
+              showError={showError}
             />
-            <img src={false ? check : cancel} alt="check" />
-          </div>
-          <div>
-            <p className="errMessage">Uh oh! There was an error!</p>
+            {isTickValid}
           </div>
           {showLabel && <label htmlFor={name}>{placeholder}</label>}
         </>
       )}
-      {!(fieldStyle === "shortText") && !(fieldStyle === "longText") && (
+      {!(fieldStyle === "shortText") &&
+        !(fieldStyle === "longText") &&
+        !(fieldStyle === "password") && (
+          <>
+            <div className="flex order-1">
+              <input
+                className="textSmall"
+                type={inputType}
+                id={name}
+                name={name}
+                placeholder={placeholder}
+                onBlur={toggleLabel}
+                onChange={toggleLabel}
+                required={required}
+              />
+              {isTickValid}
+            </div>
+            <div>
+              <p className="errMessage">Uh oh! There was an error!</p>
+            </div>
+
+            {showLabel && <label htmlFor={name}>{placeholder}</label>}
+          </>
+        )}
+      {fieldStyle === "password" && (
         <>
           <div className="flex order-1">
             <input
               className="textSmall"
-              type={inputType}
+              type={showPassword ? "text" : inputType}
               id={name}
               name={name}
               placeholder={placeholder}
               onBlur={toggleLabel}
               onChange={toggleLabel}
-              required={required}
             />
-            <img src={check} alt="check" />
+            <img
+              onClick={toggleShow}
+              src={showPassword ? show_password : hide_password}
+              alt=""
+            />
           </div>
           <div>
             <p className="errMessage">Uh oh! There was an error!</p>
           </div>
+
           {showLabel && <label htmlFor={name}>{placeholder}</label>}
         </>
       )}
@@ -174,6 +224,7 @@ FormGroup.propTypes = {
   fieldStyle: PropTypes.string.isRequired,
   inputType: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  showError: PropTypes.bool,
   placeholder: PropTypes.string.isRequired,
   required: PropTypes.bool,
 };

@@ -7,8 +7,8 @@ import {
   landing_image_3,
   landing_image_4,
   landing_image_5,
+  happy,
 } from "../assets/index";
-import Layout from "../components/global/Layout";
 
 const Landing = () => {
   return (
@@ -33,7 +33,7 @@ const Landing = () => {
         tickColor="purple"
         image={landing_image_5}
         imageLeft
-        title="Request a loan and pay with little interest "
+        title="Request a loan and pay with little interest"
         listArray={[
           "Ad sint cupidatat qui veniam enim labore reprehender.",
           "Ad sint cupidatat qui veniam enim labore reprehender.",
@@ -41,7 +41,7 @@ const Landing = () => {
         ]}
       />
       <Features
-        tickColor="purple"
+        tickColor="orange"
         image={landing_image_4}
         title="Apply for a savings plan and enjoy tomorrow"
         listArray={[
@@ -51,6 +51,11 @@ const Landing = () => {
         ]}
       />
       <Happy />
+      <Headline
+        title="Take your finances to the next level"
+        text="Sign up on MBBOV and  start making money work for you."
+        image={happy}
+      />
     </Layout>
   );
 };

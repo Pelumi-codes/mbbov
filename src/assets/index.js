@@ -40,9 +40,28 @@ import tick from './icons/global/tick.svg'
 import tick_orange from './icons/global/tick_orange.svg'
 import tick_purple from './icons/global/tick_purple.svg'
 import chevronDown from './icons/global/chevronDown.svg'
+import nav_hamburger from './icons/global/nav_hamburger.svg'
 import hamburger from './icons/global/hamburger.svg'
 import cancel from './icons/Contact/cancel.svg'
 import check from './icons/Contact/check.svg'
+import close from './icons/global/close.svg'
+import error from './images/error/error.png'
+
+import stroke from './icons/global/Vector (Stroke).svg'
+
+import checkmark from './icons/global/fluent_checkmark-circle-16-filled.svg'
+import investing from './icons/global/Investing-amico 5.svg'
+import hide_password from './icons/global/hide_password.svg'
+import show_password from './icons/global/show_password.svg'
+import alert from './icons/global/alert.svg'
+import recent from './icons/global/recent.svg'
+import more from './icons/global/more.svg'
+import approved from './icons/global/approved.svg'
+import rejected from './icons/global/rejected.svg'
+import pending from './icons/global/pending.svg'
+import disbursed from './icons/global/disbursed.svg'
+
+import db_avatar1 from  './images/global/dashboard_avatar/db_avatar1.png'
 
 export {
   mbbovLogo,
@@ -82,5 +101,22 @@ export {
   payment,
   one,
   two,
-  three
+  three,
+  stroke,
+  checkmark,
+  investing,
+  close,
+  error,
+  nav_hamburger,
+  hide_password,
+  show_password,
+  alert,
+  recent,
+  more,
+  approved,
+  rejected,
+  pending,
+  disbursed,
+
+db_avatar1
 }

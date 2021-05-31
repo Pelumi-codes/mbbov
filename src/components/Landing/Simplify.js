@@ -83,7 +83,49 @@ const Wrapper = styled.div`
             .lg{
                 display:none;
             }
+            .size-60{
+                font-size:29px;
+            }
         }
+        @media (max-width: 480.98px) {
+            padding: 50px 24px;
+
+            .size-60 {
+                font-size: 40px;
+            }
+            .size-22 {
+                font-size: 19px;
+            }
+            .width-336 {
+                width: 206px;
+            }
+            .size-18 {
+                font-size: 16px;
+            }
+        }
+        @media (min-width: 481px) and (max-width: 768.98px) {
+            .size-60 {
+                font-size: 50px;
+            }
+        }
+        @media (min-width: 769px) and (max-width: 1023.98px){
+            padding: 50px 48px;
+            .simplify{
+                padding:0px 0px;
+            }
+            .size-60 {
+                padding-bottom: 1.5rem;
+                font-size: 40px;
+            }
+            .size-30 {
+                font-size: 28px;
+            }
+            .size-18 {
+                font-size: 15px;
+            }
+        }
+        @media (min-width: 1024px) and (max-width: 1199.98px){}
+        
 
 `;
 

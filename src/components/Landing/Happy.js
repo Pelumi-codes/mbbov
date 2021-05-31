@@ -8,140 +8,168 @@ rating,happy} from '../../assets/index'
 
 
 const Wrapper = styled.div`
-        padding: 10px 140px;
-        padding-bottom:50px;
-        .simplify{
-            padding:0px 94px;
-        }
-        .flex{
-            display:flex;
-        }
-        .width-100{
-            width:100%;
-        }
-        .width{
-            width:50%;
-        }
-        .center{
-            text-align:center;
-            margin:auto;
-        }
-        .flex-center{
-            align-items:center;
-        }
-        .between{
-            justify-content:space-between;
-        }
-        .mb{
-            display:none;
-        }
-        .width-680{
-            width:680px;
-        }
-        .width-630{
-            width:530px;
-        }
+        .gray-section{
+            background: #FBFBFE;
+            padding: 0 158px;
+            display: flex;
+            .large-image{
+              height: 300px;
+              width: 300px;
+              border-radius:15px;  
+              margin: auto 0;
+            }
+            .text{
+                margin-top:82px;
+                margin-left:72px;
+                h2{
+                    padding:0;
+                    marin-top:0;
+                    margin-bottom:48px;
+                    font-size:48px;
+                    color: #1C0F61;
+                }
+                p{
+                    font-size:24px;
+                    line-height:36px;
+                    color: #4E4B66;
+                }
+                .text--small{
+                    display: flex;
+                    p{
+                        font-size:18px;
+                        margin-right:12px;
+                    }
+                }
+                .sm-p{
+                        font-size:18px;
+                        margin-top:0;
+                        margin-bottom:203px;
 
-        .family{
-            font-family: DM Sans;
-            font-style: normal;
-            color: #1C0F61;
+                }
+            }
         }
-        .size-60{
-            font-weight: bold;
-             font-size: 60px;
-            line-height: 150%;
-        }
-        .size-48{
-            font-weight: bold;
-             font-size: 48px;
-            line-height: 130%;
-        }
-        .size-24{
-            font-weight: 500;
-            font-size: 24px; 
-            line-height: 150%;
-            color: #4E4B66;
-        }
-        .size-18{
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 150%;
-        }
-        .pad{
-            padding:2rem 0rem
-        }
-        .pad-2{
-            padding-top:2rem;
-        }
-        .pad-3{
-            padding-top:4rem;
-        }
-        .m-3{
-            margin-top:4rem;
-        }
-        .column{
-        flex-direction:column;
-        }
-        .pad-l{
-            padding-left:1rem;
-        }
-        .pad-section{
-            padding-top:11rem;
-        }
+        
 
-        @media (max-width: 768px) {
-            .pad-2{
-            padding-top:2rem;
-           }
-            .simplify{
-                padding:0px 0px;
+@media (max-width:1200px){
+    .gray-section{
+            padding: 0 93px;
+            display: flex;
+            .large-image{
             }
-            .width{
-                width:100%;
-            }
-            .flex{
-                flex-direction:column;
-            }
-            .mb{
-                display:block;
-            }
-            .lg{
-                display:none;
+            .text{
+                h2{
+                }
+                p{
+                }
+                .text--small{
+                    display: flex;
+                    p{
+                        font-size:13px;
+                    }
+                }
+                .sm-p{
+                    font-size:13px;
+
+                }
             }
         }
+}
 
+@media (max-width:1024px){
+    .gray-section{
+            padding: 0 93px;
+            display: flex;
+            .large-image{
+            }
+            .text{
+                h2{
+                    font-size:30px;
+                }
+                p{
+                    font-size:17px;
+                }
+                .text--small{
+                    display: flex;
+                    p{
+                    }
+                }
+                .sm-p{
+
+                }
+            }
+        }
+}
+
+@media (max-width:900px){
+    .gray-section{
+            padding: 0 43px;
+            display: flex;
+            .large-image{
+            }
+            .text{
+                h2{
+                    font-size:30px;
+                }
+                p{
+                    font-size:17px;
+                }
+                .text--small{
+                }
+                .sm-p{
+                    margin-bottom: 76px;
+                }
+            }
+        }
+}
+@media (max-width:768px){
+    .gray-section{
+            padding: 0 43px;
+            display: flex;
+            flex-direction:column;
+            .large-image{
+                margin: auto;
+                margin-top:76px;
+                height: auto;
+                width: 300px;
+                @media (max-width:500px){
+                    width: 93%;
+                }
+            }
+            .text{
+                margin-left:0;
+                h2{
+                    font-size:30px;
+                }
+                p{
+                    font-size:17px;
+                }
+                .text--small{
+                }
+                .sm-p{
+                    margin-bottom: 76px;
+                }
+            }
+        }
+}
 `;
 
 const Header= () => {
     return (
       <Wrapper>
-          <div className="flex family width-100 between">
-                <div className="m-3">
-                    <img src={testimonial} alt=""/>
-                </div>
-                <div className="flex column width-680">
-                    <h2 className="size-48">100+ Happy Clients</h2>
-                    <p className="size-24 m-3">"I saw an advert on a friend's WhatsApp status and decided 
+          <div className ="gray-section" >
+                    <img className='large-image' src={testimonial} alt=""/>
+                <div className="text">
+                    <h2 className="">100+ Happy Clients</h2>
+                    <p className="">"I saw an advert on a friend's WhatsApp status and decided 
                     to copy, save it and follow up on it.After saving for a period 
                     of 60 days and providing the necessary documents, I was 
                     given a loan of N100,000"</p>
-                    <div className="flex pad-2">
+                    <div className="text--small">
                         <p>Racheal Nixon Jumbo</p>
-                        <img className="pad-l flex-center" src={rating} alt=""/>
+                        <img className="" src={rating} alt=""/>
                     </div>
-                    <p>Business Owner</p>
+                    <p className='sm-p'>Business Owner</p>
                 </div>
-          </div>
-          <div className="flex family between pad-section flex-center">
-              <div className=" width">
-                  <h2 className="size-60 width-680">Take your finances to the next level</h2>
-                  <p className="size-24 pad width-630">Sign up on MBBOV and  start making money work for you.</p>
-                  <Button text='Get Started'/>
-              </div>
-              <div className="width">
-                  <img src={happy} alt=""/>
-              </div>
           </div>
 
         

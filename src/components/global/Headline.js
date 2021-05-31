@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components'
 import Button from './Button'
-import {pcPhoneCircle,star} from'../../assets/index'
+import { pcPhoneCircle, star } from '../../assets/index'
+import PropTypes from 'prop-types'
 const Wrapper = styled.div`
 display: flex;
-padding: 0 72px;
+padding:${props =>props.image ? '116px 72px' : '0 72px'};
 position: relative;
 overflow: hidden;
 
@@ -43,9 +44,7 @@ overflow: hidden;
    }
 
 
-   .img-container{
-   }
-
+   
    p{
         display: flex;
         align-items:center;
@@ -91,15 +90,23 @@ overflow: hidden;
 
 
     @media (max-width:1024px){
-     flex-direction:column-reverse;
+    .img-container{
+    width:100%;
+   }
+   .text{
+     width: 50%;
+     margin-top:50px;
+   }
+
      .hero{
         width: 100%;
-        margin-top:100px;
+        margin-top:0;
         transform: translateX(0)
    }
        h1{
-      width: 583px;
-      font-size:60px;
+      width: 80%;
+      font-size:30px;
+      line-height:50px;
       margin-top:80px;
        }
        p{
@@ -107,18 +114,50 @@ overflow: hidden;
          width:526px;
        }
     }
+    @media (max-width:900px){
+    //  flex-direction:column-reverse;
+    .img-container{
+    width:100%;
+   }
+   .text{
+     width: 50%;
+   }
+
+     .hero{
+        width: 100%;
+        margin-top:100px;
+        transform: translateX(0)
+   }
+       h1{
+     width: 80%;
+    font-size: 27px;
+    line-height: 44px;
+    margin-top: 0;
+       }
+       p{
+             font-size: 15px;
+    width: 329px;
+       }
+    }
 
 
     @media (max-width:768px){
       padding: 0 30px;
+      flex-direction:column-reverse;
        h1{
       width: 467px;
       font-size:48px;
-      margin-top:80px;
+      margin-top:0;
        }
        p{
         font-size:20px;
          width:429px;
+       }
+       .hero{
+         margin-top:30px;
+       }
+       .text{
+         margin-top:0;
        }
     }
 
@@ -156,10 +195,10 @@ overflow: hidden;
     }
 
 `
-const Headline = ({hasChild,title,text}) => {
+const Headline = ({hasChild,title,text,image}) => {
   return (
-    <Wrapper>
-      <div>
+    <Wrapper image={image}>
+      <div className='text'>
         <h1>{title}</h1>
         <p>{text}</p>
         <Button text='Get Started' />
@@ -183,9 +222,15 @@ const Headline = ({hasChild,title,text}) => {
       </div>
 
       <div className='img-container'>
-        <img className='hero' src={pcPhoneCircle} alt="pc-phone-circle"/>
+        <img className='hero' src={image ||pcPhoneCircle} alt={image ||"pc-phone-circle"}/>
       </div>
     </Wrapper>
   )
+}
+Headline.propTypes = {
+  hasChild: PropTypes.bool,
+  tilte: PropTypes.string,
+  text: PropTypes.string,
+  image: PropTypes.object
 }
 export default Headline;

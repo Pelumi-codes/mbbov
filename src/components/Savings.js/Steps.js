@@ -87,29 +87,63 @@ const Wrapper = styled.div`
                 display:none;
             }
         }
+        @media (max-width: 480.98px) {
+            padding: 50px 24px;
+
+            .size-60 {
+                font-size: 40px;
+            }
+            .size-22 {
+                font-size: 19px;
+            }
+            .width-336 {
+                width: 206px;
+            }
+            .size-18 {
+                font-size: 16px;
+            }
+        }
+        @media (min-width: 481px) and (max-width: 768.98px) {
+            .size-60 {
+                font-size: 50px;
+            }
+        }
+        @media (min-width: 769px) and (max-width: 1023.98px){
+            padding: 50px 48px;
+            .simplify{
+                padding:0px 0px;
+            }
+            .width-336 {
+                width: 210px;
+            }
+            .size-60 {
+                padding-bottom: 1.5rem;
+            }
+        }
+        @media (min-width: 1024px) and (max-width: 1199.98px){}
 
 `;
 
-const Header= () => {
+const Header= ({option1,value1,option2,value2,option3,value3}) => {
     return (
       <Wrapper>
-          <h2 className="family center size-60 lg">Get started in 3 easy steps</h2>
+          <h2 className="family center size-60 ">Get started in 3 easy steps</h2>
           
            <div className="family flex between pad-t simplify pad-3">
               <div className="flex column flex-center pad-2">
                  <img src={one} alt="" />
-                 <p className="size-22 pad-t">Sign Up</p>
-                 <p className="size-18 center pad-t width-336">Create an account with your name and email or phone number</p>
+                 <p className="size-22 pad-t">{option1}</p>
+                 <p className="size-18 center pad-t width-336">{value1}</p>
               </div>
               <div className="flex column flex-center pad-2">
                  <img src={two} alt="" />
-                 <p className="size-22 pad-t">Choose a Payment Option</p>
-                 <p className="size-18 center pad-t width-336">Via bank transfer(s) or paystack, set up and fund your first plan.</p>
+                 <p className="size-22 pad-t">{option2}</p>
+                 <p className="size-18 center pad-t width-336">{value2}</p>
               </div>
               <div className="flex column flex-center pad-2">
                  <img src={three} alt="" />
-                 <p className="size-22 pad-t">Start Saving</p>
-                 <p className="size-18 center pad-t width-336">Choose a flexible savings option either daily, weekly or monthly.</p>
+                 <p className="size-22 pad-t">{option3}</p>
+                 <p className="size-18 center pad-t width-336">{value3}</p>
               </div>
            </div>
            <Button text='Get Started' className="center m-3"/>        

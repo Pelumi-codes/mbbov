@@ -32,7 +32,12 @@ const Wrapper = styled.button`
   }
 
   @media screen and (max-width: 768px) {
-    height: ${(props) => (props.bg === "primary" ? "5.6rem" : "4.8rem")};
+    height: ${(props) => (props.bg === "primary" ? "5.6rem" : "3.6rem")};
+  }
+  
+  @media (max-width:500px){
+     height: 3rem;
+    padding: 0 1.6rem;
   }
 `;
 
