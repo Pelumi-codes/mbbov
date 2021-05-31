@@ -1,6 +1,6 @@
 input:focus {
   outline: none;
-  border-color: #8D87B0;
+  border-color: #8d87b0;
 }
 
 button {
@@ -72,4 +72,8 @@ ul {
 
 .textCapitalize {
   text-transform: capitalize;
+}
+
+.bodyText {
+  color: #4e4b66;
 }

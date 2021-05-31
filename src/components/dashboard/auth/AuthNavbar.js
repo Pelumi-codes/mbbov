@@ -1,7 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { logo } from "../../../assets/dashboard";
+import Theme from "../../../utils/theme";
 
 const Wrapper = styled.nav`
   display: flex;
@@ -21,20 +23,68 @@ const Wrapper = styled.nav`
     line-height: 24px;
     letter-spacing: 0px;
     text-align: left;
-    color: #ff7742;
+    color: ${Theme.secondary};
     text-decoration: underline;
+  }
+
+  &.lg {
+    display: none;
+  }
+
+  @media screen and (min-width: 769px) {
+    padding: 2.4rem 7.2rem;
+    &.mb {
+      display: none;
+    }
+    &.lg {
+      display: flex;
+      justify-content: flex-end;
+    }
   }
 `;
 
-const AuthNavbar = ({ className }) => {
+const AuthNavbar = ({ className, noLogin, signUp }) => {
   return (
-    <Wrapper className={className}>
-      <img src={logo} alt="MBBOV" />
-      <Link to="/sign-in" className="navLink textRegular">
-        Log in
-      </Link>
-    </Wrapper>
+    <>
+      <Wrapper className={`${className} mb`}>
+        <img src={logo} alt="MBBOV" className="logo" />
+        {!noLogin && (
+          <Link to="/sign-in" className="navLink textRegular">
+            Log in
+          </Link>
+        )}
+        {noLogin && signUp && (
+          <Link to="/sign-up" className="navLink textRegular">
+            Sign up
+          </Link>
+        )}
+      </Wrapper>
+      <Wrapper className={`${className} lg`}>
+        {!noLogin && (
+          <p className="textRegular bodyText">
+            Already have an account?{" "}
+            <Link to="/sign-in" className="navLink textRegular">
+              Log in
+            </Link>
+          </p>
+        )}
+        {noLogin && signUp && (
+          <p className="textRegular bodyText">
+            Don't have an account?{" "}
+            <Link to="/sign-up" className="navLink textRegular">
+              Sign up
+            </Link>
+          </p>
+        )}
+      </Wrapper>
+    </>
   );
+};
+
+AuthNavbar.propTypes = {
+  className: PropTypes.string,
+  noLogin: PropTypes.bool,
+  signUp: PropTypes.bool,
 };
 
 export default AuthNavbar;

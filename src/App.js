@@ -9,6 +9,9 @@ import Loan from "./pages/Loan";
 import Investment from "./pages/Investment";
 import Savings from "./pages/Savings";
 import SignUp from "./pages/dashboard/SignUp";
+import ForgotPassword from "./pages/dashboard/ForgotPassword";
+import SignIn from "./pages/dashboard/SignIn";
+import VerifyEmail from "./pages/dashboard/verifyEmail";
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
 
         {/* Authentication */}
         <Route exact path="/sign-up" component={SignUp} />
+        <Route exact path="/sign-in" component={SignIn} />
+        <Route exact path="/forgot-password" component={ForgotPassword} />
+        <Route exact path="/verify-email" component={VerifyEmail} />
 
         {/* Page Not Found */}
         <Route

@@ -163,7 +163,6 @@ const FormGroup = ({
           <div>
             <p className="errMessage">Uh oh! There was an error!</p>
           </div>
-          Praise Digifigs, [16.04.21 14:08]
           {showLabel && <label htmlFor={name}>{placeholder}</label>}
         </>
       )}

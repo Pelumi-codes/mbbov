@@ -14,6 +14,10 @@ const Theme = {
   error: "#ED2E7E",
   success: "#00BA88",
   yellow: "#F4B740",
+  filterPrimary:
+    "brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(305deg) brightness(103%) contrast(101%)",
+  filterWhite:
+    "brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(305deg) brightness(103%) contrast(101%)",
 };
 
 export default Theme;

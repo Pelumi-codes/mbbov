@@ -5,20 +5,16 @@ import Spacer from "../../components/dashboard/global/Spacer";
 import AuthForm from "../../components/dashboard/auth/AuthForm";
 import AuthLayout from "../../components/dashboard/auth/AuthLayout";
 
-const SignUp = () => {
+const SignIn = () => {
   return (
     <AuthLayout>
-      <AuthNavbar />
+      <AuthNavbar noLogin signUp />
       <Spacer y={7.2} />
-      <Caption
-        heading={`Get your finances right today`}
-        subHeading={`Sign up to get started`}
-        className="caption"
-      />
+      <Caption heading={`Great to have you back!`} />
       <Spacer y={4.8} />
-      <AuthForm page="signUp" btnText="Sign up" />
+      <AuthForm page="signIn" btnText="Sign in" />
     </AuthLayout>
   );
 };
 
-export default SignUp;
+export default SignIn;

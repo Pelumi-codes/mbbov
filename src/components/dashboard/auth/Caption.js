@@ -18,26 +18,34 @@ const Wrapper = styled.div`
   }
 `;
 
-const Caption = ({ className, heading, subHeading, subHeadingColor }) => {
-  const styleProps = { className, subHeadingColor };
+const Caption = ({
+  className,
+  heading,
+  subHeading,
+  subHeadingColor,
+  align,
+}) => {
+  const styleProps = { className, subHeadingColor, align };
   return (
     <Wrapper {...styleProps}>
       <h2 className="heading textLargeBold">
-        {heading.split("\n").map((section) => (
-          <span key={section}>
-            {section}
-            <br />
-          </span>
-        ))}
+        {heading &&
+          heading.split("\n").map((section) => (
+            <span key={section}>
+              {section}
+              <br />
+            </span>
+          ))}
       </h2>
       <Spacer y={1.2} />
       <h4 className="subHeading textRegular">
-        {subHeading.split("\n").map((section) => (
-          <span key={section}>
-            {section}
-            <br />
-          </span>
-        ))}
+        {subHeading &&
+          subHeading.split("\n").map((section) => (
+            <span key={section}>
+              {section}
+              <br />
+            </span>
+          ))}
       </h4>
     </Wrapper>
   );
@@ -46,8 +54,9 @@ const Caption = ({ className, heading, subHeading, subHeadingColor }) => {
 Caption.propTypes = {
   className: PropTypes.string,
   heading: PropTypes.string.isRequired,
-  subHeading: PropTypes.string.isRequired,
+  subHeading: PropTypes.string,
   subHeadingColor: PropTypes.string,
+  align: PropTypes.string,
 };
 
 export default Caption;
