@@ -129,7 +129,6 @@ const AuthForm = ({ page, btnText }) => {
               name={field.name}
               placeholder={field.placeholder}
               required={field.required}
-              showError={false}
             />
             <Spacer y={2.4} />
           </div>

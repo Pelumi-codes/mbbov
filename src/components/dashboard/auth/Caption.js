@@ -25,9 +25,9 @@ const Caption = ({
   subHeadingColor,
   align,
 }) => {
-  const styleProps = { className, subHeadingColor, align };
+  const styleProps = { subHeadingColor, align };
   return (
-    <Wrapper {...styleProps}>
+    <Wrapper {...styleProps} className={`${className} caption`}>
       <h2 className="heading textLargeBold">
         {heading &&
           heading.split("\n").map((section) => (

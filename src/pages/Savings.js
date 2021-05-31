@@ -6,6 +6,7 @@ import Automate from "../components/Savings.js/Automate";
 import Steps from "../components/Savings.js/Steps";
 import Accordion from "../components/global/Accodion";
 import Heading from "../components/global/LoanHeading";
+import Layout from "../components/global/Layout";
 
 const questions = [
   {

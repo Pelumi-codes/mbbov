@@ -13,7 +13,6 @@ const SignUp = () => {
       <Caption
         heading={`Get your finances right today`}
         subHeading={`Sign up to get started`}
-        className="caption"
       />
       <Spacer y={4.8} />
       <AuthForm page="signUp" btnText="Sign up" />

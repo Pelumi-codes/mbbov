@@ -4,11 +4,12 @@ import Happy from "../components/Landing/Happy";
 import Headline from "../components/global/Headline";
 import Features from "../components/global/Features";
 import {
-  landing_image_3,
+  // landing_image_3,
   landing_image_4,
   landing_image_5,
   happy,
 } from "../assets/index";
+import Layout from "../components/global/Layout";
 
 const Landing = () => {
   return (

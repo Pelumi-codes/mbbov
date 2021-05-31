@@ -139,7 +139,6 @@ const FormGroup = ({
               onBlur={toggleLabel}
               onChange={toggleLabel}
               onFocus={validationHandler}
-              showError={showError}
             />
             {isTickValid}
           </div>

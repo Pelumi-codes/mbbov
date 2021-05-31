@@ -3,6 +3,7 @@ import Headline from "../components/global/Headline";
 import Accordion from "../components/global/Accodion";
 import Heading from "../components/global/LoanHeading";
 import Steps from "../components/Savings.js/Steps";
+import Layout from "../components/global/Layout";
 
 const questions = [
   {
