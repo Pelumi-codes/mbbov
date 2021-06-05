@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Card from './Card'
 import Recent from './Recent/Recent'
 import Table from './Table/Table'
+import Input from  '../../global/FormGroup'
 
 const Wrapper = styled.div`
 padding: 48px 0;
@@ -28,6 +29,10 @@ padding: 0 24px;
   overflow: auto;
   box-sizing:border-box;
   background: #E5E5E5;
+}
+.input{
+  width: 379px;
+  margin-left:24px;
 }
 
 
@@ -77,6 +82,12 @@ const Dashboard = (props) => {
         card => <Card amount={card.amount} text={card.text} />
       )
       }
+      </div>
+      <div className='input'>
+        <Input
+          placeholder='Search name'
+          fieldStyle='search'
+        />
       </div>
       <div className='recentNTable'>
         {showRecent && <Recent />}

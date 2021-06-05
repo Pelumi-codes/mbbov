@@ -3,10 +3,16 @@ const COLUMNS = [
   Header: <input type="checkbox"/>,
   accessor:'checkbox'
   },
-  {
-  Header: 'NAME',
+  
+ {
+        Header: 'NAME',
+    accessor:'image'
+    },
+      {
+  Header:'',
   accessor:'name'
-  },
+ },
+ 
   {
   Header: 'ID',
   accessor:'id'

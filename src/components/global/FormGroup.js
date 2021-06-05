@@ -7,6 +7,7 @@ import {
   cancel,
   show_password,
   hide_password,
+  search
 } from '../../assets/index'
 const Wrapper = styled.div
 `
@@ -126,6 +127,9 @@ const FormGroup = ({ fieldStyle, inputType, name, placeholder,showError }) => {
   const isTickValid = showLabel?
     <img src={ check} alt="check" /> : 
     null
+  const isSearch = showLabel?
+     null : 
+   <img src={ search} alt="search" />
   
 
   return (
@@ -171,7 +175,8 @@ const FormGroup = ({ fieldStyle, inputType, name, placeholder,showError }) => {
           {showLabel && <label htmlFor={name}>{placeholder}</label>}
         </>
       )}
-      {!(fieldStyle === "shortText") && !(fieldStyle === "longText") &&!(fieldStyle==="password") && (
+      {
+        !(fieldStyle === "shortText") && !(fieldStyle === "longText") && !(fieldStyle === "password") && !(fieldStyle === "search") && (
         <>
           <div className="flex order-1">
             <input
@@ -209,6 +214,25 @@ const FormGroup = ({ fieldStyle, inputType, name, placeholder,showError }) => {
               src={showPassword ? show_password
               :hide_password}
               alt="" />
+          </div>
+          <div><p className="errMessage">Uh oh! There was an error!</p></div>
+
+{showLabel && <label htmlFor={name}>{placeholder}</label>}
+        </>
+      )}
+      {fieldStyle === "search" && (
+        <>
+          <div className="flex order-1">
+            {isSearch}
+            <input
+              className="textSmall"
+              id={name}
+              name={name}
+              placeholder={placeholder}
+              onBlur={toggleLabel}
+              onChange={toggleLabel}
+             
+            />
           </div>
           <div><p className="errMessage">Uh oh! There was an error!</p></div>
 
