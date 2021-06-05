@@ -57,41 +57,55 @@ const TableWrapper = styled.table`
       margin: ${(props) => (props.showRecent ? "0 24px" : "0 27px")};
       height: 60px;
       align-items: center;
+      width: 18px;
+      input {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      }
     }
     td:nth-child(2),
     th:nth-child(2) {
-      width: ${(props) => (props.showRecent ? "166px" : "226px")};
+      width: ${(props) => (props.showRecent ? "166px" : "48px")};
+      img {
+        width: 36px;
+      }
     }
-    td:nth-child(3) {
-      width: ${(props) => (props.showRecent ? "103px" : "105px")};
+    td:nth-child(3),
+    th:nth-child(3) {
+      width: ${(props) => (props.showRecent ? "103px" : "188px")};
     }
     td:nth-child(4) {
-      width: ${(props) => (props.showRecent ? "100px" : "133px")};
+      width: ${(props) => (props.showRecent ? "100px " : "105px")};
     }
     td:nth-child(5) {
-      width: ${(props) => (props.showRecent ? "135px" : "90px")};
+      width: ${(props) => (props.showRecent ? "135px" : "133px")};
     }
     td:nth-child(6) {
-      width: 115px;
       width: ${(props) => (props.showRecent ? "115px" : "90px")};
     }
     td:nth-child(7) {
-      width: 70px;
-      width: ${(props) => (props.showRecent ? "115px" : "108px")};
+      width: 115px;
+      width: ${(props) => (props.showRecent ? "115px" : "90px")};
     }
     td:nth-child(8) {
-      width: ${(props) => (props.showRecent ? "70px" : "156px")};
+      width: 70px;
+      width: ${(props) => (props.showRecent ? "70px" : "108px")};
     }
     td:nth-child(9) {
       width: ${(props) => (props.showRecent ? "70px" : "156px")};
     }
     td:nth-child(10) {
+      width: ${(props) => (props.showRecent ? "103px" : "156px")};
       display: ${(props) => (props.showRecent ? "flex" : "")};
-      align-items: center;
-      height: 60px;
-      width: ${(props) => (props.showRecent ? "184px" : "132px")};
     }
     td:nth-child(11) {
+      display: ${(props) => (props.showRecent ? "184px" : "")};
+      align-items: center;
+      height: 60px;
+      width: ${(props) => (props.showRecent ? "" : "132px")};
+    }
+    td:nth-child(12) {
       width: 123px;
       display: flex;
       height: 60px;
@@ -155,10 +169,16 @@ const Table = ({ columnsObject, dataObject, showRecent }) => {
           prepareRow(row);
           return (
             <tr {...row.getRowProps()}>
-              {row.cells.map((cell) => {
-                if (row.cellsindexOf(cell.value) === 2) {
-                  // cell.value = 'hi'
+              {row.cells.map((cell, index) => {
+                {
+                  console.log(cell.column.Header, "Stuff");
                 }
+                if (index === 1 && cell.column.id === "image")
+                  return (
+                    <td>
+                      <img src={cell.value} alt="avatar_image" />
+                    </td>
+                  );
                 switch (cell.value) {
                   case "Rejected":
                     return (

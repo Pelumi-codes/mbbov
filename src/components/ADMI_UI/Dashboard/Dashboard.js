@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Card from './Card'
 import Recent from './Recent/Recent'
 import Table from './Table/Table'
+import Input from  '../../global/FormGroup'
 
 const Wrapper = styled.div`
 padding: 48px 0;
@@ -28,6 +29,14 @@ padding: 0 24px;
   overflow: auto;
   box-sizing:border-box;
   background: #E5E5E5;
+}
+.input>:first-child{
+  width: 379px;
+  margin-left:24px;
+}
+.input>:nth-child(2){
+  width: 379px;
+  margin-left:24px;
 }
 
 
@@ -78,6 +87,17 @@ const Dashboard = (props) => {
       )
       }
       </div>
+      <div className='input'>
+        <Input
+          placeholder='Search name'
+          fieldStyle='search'
+        />
+        <Input
+          placeholder='Filter'
+          fieldStyle='fiter'
+        />
+      </div>
+      
       <div className='recentNTable'>
         {showRecent && <Recent />}
         <div className="table_ctn">

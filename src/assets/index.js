@@ -44,6 +44,9 @@ import hamburger from "./icons/global/hamburger.svg";
 import cancel from "./icons/Contact/cancel.svg";
 import check from "./icons/Contact/check.svg";
 import close from "./icons/global/close.svg";
+import search from "./icons/global/search.svg";
+import filter from "./icons/global/filter.svg";
+
 import error from "./images/error/error.png";
 
 import stroke from "./icons/global/Vector (Stroke).svg";
@@ -116,5 +119,7 @@ export {
   rejected,
   pending,
   disbursed,
+  search,
+  filter,
   db_avatar1,
 };

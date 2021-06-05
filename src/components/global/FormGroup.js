@@ -6,7 +6,10 @@ import {
   cancel,
   show_password,
   hide_password,
+  search,
+  filter,
 } from "../../assets/index";
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column-reverse;
@@ -81,6 +84,11 @@ const Wrapper = styled.div`
     ${(props) =>
       props.fieldStyle === "longText" ? "margin-bottom:30px" : null}
   }
+  .grey {
+    background: #f7f7fc;
+    border-radius: 10px;
+    height: 48px;
+  }
 
   .flex {
     display: flex;
@@ -125,6 +133,10 @@ const FormGroup = ({
 
   const isTickValid = showLabel ? <img src={check} alt="check" /> : null;
 
+  const isSearch = showLabel ? null : <img src={search} alt="search" />;
+
+  const isFilter = showLabel ? null : <img src={filter} alt="filter" />;
+
   return (
     <Wrapper isValid={showLabel} fieldStyle={fieldStyle} showError={showError}>
       {fieldStyle === "shortText" && (
@@ -148,24 +160,28 @@ const FormGroup = ({
           {showLabel && <label htmlFor={name}>{placeholder}</label>}
         </>
       )}
-      {fieldStyle === "longText" && (
-        <>
-          <div className="flex order-1">
-            <textarea
-              className="textSmall"
-              id={name}
-              name={name}
-              placeholder={placeholder}
-              onBlur={toggleLabel}
-              onChange={toggleLabel}
-              onFocus={validationHandler}
-              showError={showError}
-            />
-            {isTickValid}
-          </div>
-          {showLabel && <label htmlFor={name}>{placeholder}</label>}
-        </>
-      )}
+      {!(fieldStyle === "shortText") &&
+        !(fieldStyle === "longText") &&
+        !(fieldStyle === "password") &&
+        !(fieldStyle === "search") &&
+        !(fieldStyle === "filter") && (
+          <>
+            <div className="flex order-1">
+              <textarea
+                className="textSmall"
+                id={name}
+                name={name}
+                placeholder={placeholder}
+                onBlur={toggleLabel}
+                onChange={toggleLabel}
+                onFocus={validationHandler}
+                showError={showError}
+              />
+              {isTickValid}
+            </div>
+            {showLabel && <label htmlFor={name}>{placeholder}</label>}
+          </>
+        )}
       {!(fieldStyle === "shortText") &&
         !(fieldStyle === "longText") &&
         !(fieldStyle === "password") && (
@@ -206,6 +222,46 @@ const FormGroup = ({
               onClick={toggleShow}
               src={showPassword ? show_password : hide_password}
               alt=""
+            />
+          </div>
+          <div>
+            <p className="errMessage">Uh oh! There was an error!</p>
+          </div>
+
+          {showLabel && <label htmlFor={name}>{placeholder}</label>}
+        </>
+      )}
+      {fieldStyle === "search" && (
+        <>
+          <div className="flex order-1">
+            {isSearch}
+            <input
+              className="textSmall grey"
+              id={name}
+              name={name}
+              placeholder={placeholder}
+              onBlur={toggleLabel}
+              onChange={toggleLabel}
+            />
+          </div>
+          <div>
+            <p className="errMessage">Uh oh! There was an error!</p>
+          </div>
+
+          {showLabel && <label htmlFor={name}>{placeholder}</label>}
+        </>
+      )}
+      {fieldStyle === "filter" && (
+        <>
+          <div className="flex order-1">
+            {isFilter}
+            <input
+              className="textSmall grey"
+              id={name}
+              name={name}
+              placeholder={placeholder}
+              onBlur={toggleLabel}
+              onChange={toggleLabel}
             />
           </div>
           <div>
