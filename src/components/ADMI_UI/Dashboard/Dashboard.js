@@ -30,7 +30,11 @@ padding: 0 24px;
   box-sizing:border-box;
   background: #E5E5E5;
 }
-.input{
+.input>:first-child{
+  width: 379px;
+  margin-left:24px;
+}
+.input>:nth-child(2){
   width: 379px;
   margin-left:24px;
 }
@@ -88,7 +92,12 @@ const Dashboard = (props) => {
           placeholder='Search name'
           fieldStyle='search'
         />
+        <Input
+          placeholder='Filter'
+          fieldStyle='fiter'
+        />
       </div>
+      
       <div className='recentNTable'>
         {showRecent && <Recent />}
         <div className="table_ctn">

@@ -7,7 +7,8 @@ import {
   cancel,
   show_password,
   hide_password,
-  search
+  search,
+  filter
 } from '../../assets/index'
 const Wrapper = styled.div
 `
@@ -89,6 +90,11 @@ const Wrapper = styled.div
      props => props.fieldStyle ==="longText" ? 'margin-bottom:30px' : null
     }
 }
+.grey{
+  background: #F7F7FC;
+  border-radius:10px;
+  height: 48px;
+}
 
 
   .flex{
@@ -127,9 +133,13 @@ const FormGroup = ({ fieldStyle, inputType, name, placeholder,showError }) => {
   const isTickValid = showLabel?
     <img src={ check} alt="check" /> : 
     null
+  
   const isSearch = showLabel?
      null : 
-   <img src={ search} alt="search" />
+    <img src={search} alt="search" />
+  
+  const isFilter  = showLabel?
+     null : <img src={filter} alt="filter" />
   
 
   return (
@@ -176,7 +186,7 @@ const FormGroup = ({ fieldStyle, inputType, name, placeholder,showError }) => {
         </>
       )}
       {
-        !(fieldStyle === "shortText") && !(fieldStyle === "longText") && !(fieldStyle === "password") && !(fieldStyle === "search") && (
+        !(fieldStyle === "shortText") && !(fieldStyle === "longText") && !(fieldStyle === "password") && !(fieldStyle === "search") && !(fieldStyle === "filter") && (
         <>
           <div className="flex order-1">
             <input
@@ -225,7 +235,26 @@ const FormGroup = ({ fieldStyle, inputType, name, placeholder,showError }) => {
           <div className="flex order-1">
             {isSearch}
             <input
-              className="textSmall"
+              className="textSmall grey"
+              id={name}
+              name={name}
+              placeholder={placeholder}
+              onBlur={toggleLabel}
+              onChange={toggleLabel}
+             
+            />
+          </div>
+          <div><p className="errMessage">Uh oh! There was an error!</p></div>
+
+{showLabel && <label htmlFor={name}>{placeholder}</label>}
+        </>
+      )}
+      {fieldStyle === "filter" && (
+        <>
+          <div className="flex order-1">
+            {isFilter}
+            <input
+              className="textSmall grey"
               id={name}
               name={name}
               placeholder={placeholder}

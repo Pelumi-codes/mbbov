@@ -17,6 +17,8 @@ import LoginDashboard from './pages/LoginDashboard';
 import Login from './pages/Login';
 
 import InvestmentDashboard from './pages/InvestmentDashboard';
+import SavingsDashboard from './pages/SavingsDashboard';
+import LoanDashboard from './pages/LoanDashboard';
 
 
 function App() {
@@ -39,6 +41,8 @@ function App() {
           
         <Route exact path='/login-dashboard' component={LoginDashboard} />
         <Route exact path='/investment-dashboard' component={InvestmentDashboard} />
+        <Route exact path='/savings-dashboard' component={SavingsDashboard} />
+        <Route exact path='/loan-dashboard' component={LoanDashboard} />
       </Router>
       </Layout>
      
