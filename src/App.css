@@ -49,9 +49,29 @@ ul {
   pointer-events: all;
 }
 
-.flex-row {
+.fullWidth {
+  width: 100%;
+}
+
+.flexRow {
   display: flex;
   flex-direction: row;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.spaceBetween {
+  justify-content: space-between;
+}
+
+.overflowAuto {
+  overflow: auto;
 }
 
 .noDisplay {

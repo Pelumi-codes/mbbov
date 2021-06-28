@@ -5,34 +5,24 @@ const Container = styled.div`
   margin: auto;
   padding: 0 2.4rem;
 
-  @media screen and (min-width: 576px) {
-    max-width: 540px;
+  &.row,
+  .row {
+    display: flex;
+    align-items: center;
   }
 
-  @media screen and (min-width: 700px) {
-    max-width: 620px;
-  }
-  @media (min-width: 768px) {
-    max-width: 720px;
+  &.justify-center,
+  .justify-center {
+    justify-content: center;
   }
 
-  @media screen and (min-width: 992px) {
-    max-width: 960px;
+  &.space-between,
+  .space-between {
+    justify-content: space-between;
   }
 
-  @media screen and (min-width: 1200px) {
-    max-width: 1140px;
-  }
-
-  @media screen and (min-width: 1240px) {
-    max-width: 1190px;
-  }
-
-  @media (min-width: 1400px) {
-    max-width: 1296px;
-  }
-  @media (min-width: 1600px) {
-    max-width: 1460px;
+  @media screen and (min-width: 769px) {
+    padding: 0 4.8rem;
   }
 `;
 

@@ -20,6 +20,7 @@ import Login from "./pages/Login";
 import InvestmentDashboard from "./pages/InvestmentDashboard";
 import SavingsDashboard from "./pages/SavingsDashboard";
 import LoanDashboard from "./pages/LoanDashboard";
+import DashboardLayout from "./components/dashboard/global/DashboardLayout";
 
 function App() {
   return (
@@ -55,6 +56,9 @@ function App() {
         <Route exact path="/sign-in" component={SignIn} />
         <Route exact path="/forgot-password" component={ForgotPassword} />
         <Route exact path="/verify-email" component={VerifyEmail} />
+
+        {/* User dashboard */}
+        <Route path="/dashboard" component={DashboardLayout} />
 
         {/* Page Not Found */}
         <Route
