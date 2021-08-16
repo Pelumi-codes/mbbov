@@ -3,8 +3,9 @@ import PropTypes from "prop-types";
 import Theme from "../../../utils/theme";
 import NairaSign from "../global/NairaSign";
 import Spacer from "../global/Spacer";
+import { Link } from "react-router-dom";
 
-const Wrapper = styled.div`
+const Wrapper = styled(Link)`
   position: relative;
   padding: 2.4rem;
   background-color: #ffffff;
@@ -14,6 +15,11 @@ const Wrapper = styled.div`
   height: 13.4rem;
   border-radius: 1rem;
   width: 100%;
+  transition: all 250ms ease-out;
+
+  &:hover {
+    box-shadow: 0px 0px 5px ${Theme.greyShade[4]};
+  }
 
   .title {
     font-size: 14px;
@@ -70,9 +76,10 @@ const OverviewCard = ({
   amount = "0.00",
   info = "",
   icon = "",
+  target = "/dashboard",
 }) => {
   return (
-    <Wrapper>
+    <Wrapper to={target}>
       <img src={icon} alt="Investments overview" className="icon" />
       <p className="title">{title}</p>
       <div className="amount">
@@ -90,6 +97,7 @@ OverviewCard.propTypes = {
   amount: PropTypes.string.isRequired,
   info: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
+  target: PropTypes.string,
 };
 
 export default OverviewCard;

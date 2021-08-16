@@ -18,13 +18,12 @@ const Header = styled.div`
   text-align: center;
   color: ${Theme.primary};
 
-  .slideNav {
+  .slideNavBtn {
     display: none;
   }
 
   @media screen and (min-width: 769px) {
     text-align: left;
-    padding: 0 4.8rem;
 
     .slideNavBtn {
       display: flex;
@@ -33,16 +32,24 @@ const Header = styled.div`
       height: 3.6rem;
       width: 3.6rem;
       border-radius: 50%;
-      border: 1px solid #8d87b0;
+      border: 1px solid ${Theme.primaryShade[5]};
 
       .icon {
         height: 1.6rem;
-
+        filter: ${Theme.filterDisabled};
         &.prev {
           transform: rotateZ(90deg);
         }
         &.next {
           transform: rotateZ(-90deg);
+        }
+      }
+
+      &.active {
+        border: 1px solid ${Theme.primary};
+
+        .icon {
+          filter: unset;
         }
       }
     }
@@ -66,6 +73,8 @@ const PlansWrapper = styled.div`
 `;
 
 const PlanCard = styled.div`
+  transition: all 250ms ease-out;
+
   .inner {
     height: 100%;
     background-color: #ffffff;
@@ -126,7 +135,13 @@ const PlanCard = styled.div`
     letter-spacing: 0px;
     color: ${Theme.greyShade[1]};
   }
+
+  .btn {
+    background-color: ${(props) => props.color ?? Theme.primary};
+  }
 `;
+
+const Modal = styled.div``;
 
 function slideScroll(slideWidth) {
   // const slider = document.querySelector(".track");
@@ -153,12 +168,22 @@ function slideScroll(slideWidth) {
     if (position >= 0 && position < slides.length - 3) {
       //avoid slide right beyond the last item
       position += 1;
-      moveSlide(position, slides, slideWidth); //translate items
+      moveSlide(position, slides, slideWidth);
     }
   });
 }
 
 function moveSlide(position, slides, slideWidth) {
+  const next = document.querySelector(".slideNavBtn.next");
+  const prev = document.querySelector(".slideNavBtn.prev");
+
+  if (position >= slides.length - 3) {
+    next.classList.remove("active");
+    prev.classList.add("active");
+  } else {
+    next.classList.add("active");
+    prev.classList.remove("active");
+  }
   const slider = document.querySelector(".slider");
 
   slider.style.transform = `translateX(${position * -(slideWidth + 32)}px)`;
@@ -175,23 +200,25 @@ const Investments = () => {
   return (
     <>
       <Spacer y={4.8} />
-      <Header className="flexRow spaceBetween">
-        <span>Investment plans</span>
-        <div className="flexRow">
-          <button className="slideNavBtn prev">
-            <img src={chevronDown} alt="previous" className="icon prev" />
-          </button>
-          <Spacer x={2.4} />
-          <button className="slideNavBtn next">
-            <img src={chevronDown} alt="next" className="icon next" />
-          </button>
-        </div>
-      </Header>
+      <Container>
+        <Header className="flexRow spaceBetween">
+          <span>Investment plans</span>
+          <div className="flexRow">
+            <button className="slideNavBtn prev">
+              <img src={chevronDown} alt="previous" className="icon prev" />
+            </button>
+            <Spacer x={2.4} />
+            <button className="slideNavBtn next active">
+              <img src={chevronDown} alt="next" className="icon next" />
+            </button>
+          </div>
+        </Header>
+      </Container>
       <Spacer y={4.8} />
       <Container className="overflowAuto">
         <Track className="track">
           <PlansWrapper className="slider" slideWidth={slideWidth}>
-            <PlanCard className="planCard">
+            <PlanCard className="planCard" color="red">
               <div className="inner">
                 <h3 className="title">Mega plan</h3>
                 <img
@@ -226,6 +253,7 @@ const Investments = () => {
                   href="/dashboard/investments/fill-in-details"
                   text="Invest now"
                   width="100%"
+                  className="btn"
                 />
               </div>
             </PlanCard>

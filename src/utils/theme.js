@@ -14,6 +14,8 @@ const Theme = {
   error: "#ED2E7E",
   success: "#00BA88",
   yellow: "#F4B740",
+  filterDisabled:
+    "brightness(0) saturate(100%) invert(60%) sepia(9%) saturate(1044%) hue-rotate(209deg) brightness(90%) contrast(92%)",
   filterPrimary:
     "brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(305deg) brightness(103%) contrast(101%)",
   filterWhite:

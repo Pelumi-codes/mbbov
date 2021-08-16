@@ -184,6 +184,7 @@ const DashboardLanding = () => {
               amount="0.00"
               info="No active investments"
               icon={investmentsOverview}
+              target="/dashboard/data/investments"
             />
           </div>
           <div className="item">
@@ -192,6 +193,7 @@ const DashboardLanding = () => {
               amount="0.00"
               info="No active Savings"
               icon={savingsOverview}
+              target="/dashboard/data/savings"
             />
           </div>
           <div className="item">

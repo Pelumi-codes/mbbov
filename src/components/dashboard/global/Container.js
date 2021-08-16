@@ -8,7 +8,12 @@ const Container = styled.div`
   &.row,
   .row {
     display: flex;
+    flex-direction: row;
     align-items: center;
+  }
+
+  &.col, .col {
+    flex-direction: column;
   }
 
   &.justify-center,

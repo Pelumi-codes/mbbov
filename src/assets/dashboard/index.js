@@ -19,6 +19,7 @@ import savingsOverview from "./icons/savingsOverview.svg";
 import loansOverview from "./icons/loansOverview.svg";
 import checkedBlue from "./icons/checkedBlue.svg";
 import investmentPlanIcon from "./icons/investmentPlanIcon.svg";
+import closeIcon from "./icons/closeIcon.svg";
 
 export {
   logo,
@@ -42,4 +43,5 @@ export {
   loansOverview,
   checkedBlue,
   investmentPlanIcon,
+  closeIcon,
 };
